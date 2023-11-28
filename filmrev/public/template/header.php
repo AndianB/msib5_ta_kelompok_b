@@ -30,22 +30,6 @@
                       <li><a href="contact.php">Contact</a></li>
                     </ul>
                   </div>
-                  <div class="header-action d-none d-md-block">
-                    <ul>
-                      <li class="header-search">
-                        <a
-                          href="#"
-                          data-toggle="modal"
-                          data-target="#search-modal"
-                          ><i class="fas fa-search"></i
-                        ></a>
-                      </li>
-                      <li class="header-lang"></li>
-                      <li class="header-btn">
-                        <a href="#" class="btn">Sign In</a>
-                      </li>
-                    </ul>
-                  </div>
                 </nav>
               </div>
 
