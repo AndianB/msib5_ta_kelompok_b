@@ -64,7 +64,6 @@
               <div class="banner-meta wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.8s">
                 <ul>
                   <li class="quality">
-                    <span>Pg 18</span>
                     <span>hd</span>
                   </li>
                   <li class="category">
@@ -93,7 +92,7 @@
           <div class="col-lg-6">
             <div class="section-title text-center text-lg-left">
               <span class="sub-title">ONLINE STREAMING</span>
-              <h2 class="title">Upcoming Movies</h2>
+              <h2 class="title">Recommended Movies</h2>
             </div>
           </div>
           <div class="col-lg-6">
@@ -680,7 +679,7 @@
           </div>
         </div>
         <div class="text-center">
-          <a class="btn btn-warning fs-5 mt-5" href="movie.phpmovie-details.php">See More</a>
+          <a class="btn btn-warning fs-5 mt-5" href="movie.php">See More</a>
         </div>
       </div>
     </section>

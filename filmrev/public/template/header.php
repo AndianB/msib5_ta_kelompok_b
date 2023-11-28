@@ -16,13 +16,13 @@
                       <li>
                         <a href="index.php">Home</a>
                       </li>
-                      <li class="menu-item-has-children">
+                      <!-- <li class="menu-item-has-children">
                         <a href="#">Genre</a>
                         <ul class="submenu">
                           <li><a href="movie.php">Genre 1</a></li>
                           <li><a href="movie.php">Genre 2</a></li>
                         </ul>
-                      </li>
+                      </li> -->
                       <li><a href="movie.php">Film</a></li>
                       <li class="menu-item-has-children">
                         <a href="about.php">About</a>

@@ -19,12 +19,6 @@
                       <li><a href="about.php">ABOUT</a></li>
                       <li><a href="contact.php">CONTACT</a></li>
                     </ul>
-                    <div class="footer-search">
-                      <form action="#">
-                        <input type="text" placeholder="Find Favorite Movie" />
-                        <button><i class="fas fa-search"></i></button>
-                      </form>
-                    </div>
                   </nav>
                 </div>
               </div>
@@ -33,16 +27,6 @@
           <div class="footer-quick-link-wrap">
             <div class="row align-items-center">
               <div class="col-md-7">
-                <div class="quick-link-list">
-                  <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Terms of Use</a></li>
-                    <li><a href="#">Privacy</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-5">
                 <div class="footer-social">
                   <ul>
                     <li>

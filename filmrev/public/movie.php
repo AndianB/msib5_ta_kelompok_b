@@ -87,17 +87,8 @@
             <div class="movie-page-meta">
               <div class="tr-movie-menu-active text-center">
                 <button class="active" data-filter="*">Animation</button>
-                <button class="" data-filter=".cat-one">Movies</button>
                 <button class="" data-filter=".cat-two">Romantic</button>
               </div>
-              <form action="#" class="movie-filter-form">
-                <select class="custom-select">
-                  <option selected>English</option>
-                  <option value="1">Blueray</option>
-                  <option value="2">4k Movie</option>
-                  <option value="3">Hd Movie</option>
-                </select>
-              </form>
             </div>
           </div>
         </div>
@@ -107,13 +98,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster01.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+                  
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -146,13 +131,6 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster02.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -185,13 +163,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster03.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -224,13 +196,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster04.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -263,13 +229,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster05.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -302,13 +262,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster06.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -341,13 +295,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster07.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -380,13 +328,7 @@
               <div class="movie-poster">
                 <img src="img/poster/ucm_poster08.jpg" alt="" />
                 <ul class="overlay-btn">
-                  <li class="rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                  </li>
+                
                   <li>
                     <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
                   </li>
@@ -415,21 +357,7 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <div class="pagination-wrap mt-30">
-              <nav>
-                <ul>
-                  <li class="active"><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">Next</a></li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
     <!-- movie-area-end -->

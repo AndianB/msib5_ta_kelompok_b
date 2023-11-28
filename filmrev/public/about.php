@@ -144,15 +144,6 @@
                   with the release of Letraset sheets containing .
                 </p>
                 <div class="blog-post-meta">
-                  <div class="blog-details-tags">
-                    <ul>
-                      <li><i class="fas fa-tags"></i> <span>Tags :</span></li>
-                      <li>
-                        <a href="#">Movies ,</a> <a href="#">Creative ,</a>
-                        <a href="#">News ,</a> <a href="#">English</a>
-                      </li>
-                    </ul>
-                  </div>
                   <div class="blog-post-share">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -187,7 +178,7 @@
             </div>
             <div class="blog-comment mb-80">
               <div class="widget-title mb-45">
-                <h5 class="title">Comment's (02)</h5>
+                <h5 class="title">Comments</h5>
               </div>
               <ul>
                 <li>
@@ -201,7 +192,6 @@
                           Daisy Waterstone
                           <span class="comment-date">November 13, 2021</span>
                         </h5>
-                        <a href="#" class="comment-reply-link">Reply <i class="fas fa-reply-all"></i></a>
                       </div>
                       <p>
                         Printing and typetting industry. Lorem Ipsum has been
@@ -211,27 +201,7 @@
                     </div>
                   </div>
                 </li>
-                <li class="comment-reply">
-                  <div class="single-comment">
-                    <div class="comment-avatar-img">
-                      <img src="img/blog/comment_avatar02.jpg" alt="img" />
-                    </div>
-                    <div class="comment-text">
-                      <div class="comment-avatar-info">
-                        <h5>
-                          Jon Deo
-                          <span class="comment-date">November 13, 2021</span>
-                        </h5>
-                        <a href="#" class="comment-reply-link">Reply <i class="fas fa-reply-all"></i></a>
-                      </div>
-                      <p>
-                        Printing and typetting industry. Lorem Ipsum has been
-                        the instry standrd the dummy text ever since the, when
-                        an unknown printer took a galley .
-                      </p>
-                    </div>
-                  </div>
-                </li>
+              
               </ul>
             </div>
             <div class="contact-form-wrap">
@@ -255,11 +225,11 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+          <!-- <div class="col-lg-4">
             <aside class="blog-sidebar">
               <div class="widget blog-widget">
                 <div class="widget-title mb-30">
-                  <h5 class="title">Tag Post</h5>
+                  <h5 class="title">Search Genre</h5>
                 </div>
                 <div class="tag-list">
                   <ul>
@@ -274,7 +244,7 @@
                 </div>
               </div>
             </aside>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
