@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Genre - Admin</title>
+    <title>Data Kategori Umur - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -170,7 +170,7 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Genre</li>
+                                        <li class="breadcrumb-item active">Kategori</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Data Tables</h4>
@@ -179,51 +179,65 @@
                     </div>
                     <!-- end page title -->
 
-                    <h4 class="header-title">Edit Genre</h4>
-
-                    <?php
-                    include '../config/koneksi.php';
-                    $genre = mysqli_query($conn, "SELECT * from genre where GenreID='$_GET[GenreID]'");
-
-                    while ($g = mysqli_fetch_array($genre)) {
-                        $GenreID = $g["GenreID"];
-                        $Nama_Genre = $g["Nama_Genre"];
-                    }
-                    ?>
-
-                    <div class="content">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col">
-                                    <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
-                                        <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
-                                            <input type="text" name="GenreID" class="form-control" id="exampleFormControlInput1" placeholder="GenreID" value="<?php echo $GenreID ?>">
-                                        </div>
-                                        <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
-                                            <input type="text" name="NamaGenre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
-                                        </div>
-                                        <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
-                                    </form>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="header-title">Data Kategori Umur</h4>
                                 </div>
+                                <div class="card-body">
+                                    <?php
+                                    include '../config/koneksi.php';
+                                    $query = mysqli_query($conn, "SELECT * from kategori_umur;");
+                                    ?>
+                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+
+                                        <thead>
+                                            <tr>
+                                                <th>Kategori ID</th>
+                                                <th>Nama Kategori</th>
+                                                <th>Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            </tr>
+                                            <?php
+                                            if (mysqli_num_rows($query) > 0) {
+                                                $no = 1;
+                                                while ($data = mysqli_fetch_array($query)) {
+                                            ?>
+                                                    <tr>
+                                                        <td> <?php echo $data["KategoriID"] ?></td>
+                                                        <td> <?php echo $data["Nama_Kategori"] ?></td>
+                                                        <td>
+                                                            <a href="edit_kategori.php?KategoriID=<?php echo $data["KategoriID"] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                            <a href="proses_hapus_kategori.php?KategoriID=<?php echo $data["KategoriID"] ?>" onclick="konfirmasiHapus( . $data['KategoriID'] . )" class="btn btn-danger btn-sm">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+
+                                </div> <!-- end card body-->
+                            </div> <!-- end card -->
+                        </div><!-- end col-->
+                    </div> <!-- end row-->
+                </div> <!-- content -->
+
+                <!-- Footer Start -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script> © Filmrev - by <b>Group B</b>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Footer Start -->
-                    <footer class="footer">
-                        <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12 text-center">
-                                    <script>
-                                        document.write(new Date().getFullYear())
-                                    </script> © Filmrev - by <b>Group B</b>
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- end Footer -->
+                </footer>
+                <!-- end Footer -->
 
 </body>
 
@@ -251,10 +265,35 @@
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-<script>
-    function save() {
-        swal('Good job!', 'data berhasil di update!', 'success');
-    }
-</script>
+
 
 </html>
+<script>
+    function konfirmasiHapus(KategoriID) {
+
+        swal({
+                title: "Apakah Kamu yakin?",
+                text: "Data akan terhapus!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirect ke halaman Proses-hapus-data.php jika konfirmasi disetujui
+                    swal({
+                        title: "Good job!",
+                        text: "Data terhapus!",
+                        icon: "success",
+                    });
+                    setTimeout(function() {
+                        window.location.href = "proses_hapus_kategori.php?KategoriID=" + KategoriID;
+                    }, 2000);
+                } else {
+                    swal("Data Batal Di hapus!", {
+                        icon: "info",
+                    });
+                }
+            });
+    }
+</script>

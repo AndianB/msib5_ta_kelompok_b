@@ -1,6 +1,19 @@
 <?php
 include '../config/koneksi.php';
 
-$result = mysqli_query($conn, "DELETE from genre where `GenreID` = '$_GET[GenreID]'");
+if (isset($_GET['GenreID'])) {
+    $GenreID = $_GET['GenreID'];
+    $sql = "DELETE FROM genre WHERE GenreID= $GenreID";
+    $query = mysqli_query($conn, $sql);
 
-header("Location:genre.php");
+    // cek query simpan data berhasil atau tidak
+    if ($query) {
+
+        header('Location: data_genre.php');
+    } else {
+
+        header('Location: data_genre.php');
+    }
+} else {
+    die('akses di larang ...');
+}

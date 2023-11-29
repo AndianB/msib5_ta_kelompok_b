@@ -130,16 +130,16 @@
                                     <a href="tables-datatable.php">Data Tables</a>
                                 </li>
                                 <li>
-                                    <a href="film.php">Film</a>
+                                    <a href="data_film.php">Film</a>
                                 </li>
                                 <li>
-                                    <a href="cast.php">Cast</a>
+                                    <a href="data_cast.php">Cast</a>
                                 </li>
                                 <li>
-                                    <a href="genre.php">Genre</a>
+                                    <a href="data_genre.php">Genre</a>
                                 </li>
                                 <li>
-                                    <a href="kategoriumur.php">Kategori Umur</a>
+                                    <a href="data_kategoriumur.php">Kategori Umur</a>
                                 </li>
                             </ul>
                         </div>
