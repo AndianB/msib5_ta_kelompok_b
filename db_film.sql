@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 10:44 AM
+-- Generation Time: Nov 29, 2023 at 05:54 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -38,8 +38,7 @@ CREATE TABLE `film` (
   `Durasi_Film` int(11) DEFAULT NULL,
   `Sutradara` varchar(255) DEFAULT NULL,
   `GenreID` int(11) DEFAULT NULL,
-  `KategoriID` int(11) DEFAULT NULL,
-  `UlasanID` int(11) DEFAULT NULL
+  `KategoriID` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -118,7 +117,6 @@ INSERT INTO `list_cast` (`CastID`, `Nama_Cast`) VALUES
 
 CREATE TABLE `ulasan` (
   `UlasanID` int(11) NOT NULL,
-  `FilmID` int(11) DEFAULT NULL,
   `Username` varchar(255) NOT NULL,
   `Ulasan_Text` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -133,8 +131,7 @@ CREATE TABLE `ulasan` (
 ALTER TABLE `film`
   ADD PRIMARY KEY (`FilmID`),
   ADD KEY `GenreID` (`GenreID`),
-  ADD KEY `KategoriID` (`KategoriID`),
-  ADD KEY `UlasanID` (`UlasanID`);
+  ADD KEY `KategoriID` (`KategoriID`);
 
 --
 -- Indexes for table `film_cast`
@@ -165,8 +162,7 @@ ALTER TABLE `list_cast`
 -- Indexes for table `ulasan`
 --
 ALTER TABLE `ulasan`
-  ADD PRIMARY KEY (`UlasanID`),
-  ADD KEY `IDFilm` (`FilmID`);
+  ADD PRIMARY KEY (`UlasanID`);
 
 --
 -- Constraints for dumped tables
@@ -177,8 +173,7 @@ ALTER TABLE `ulasan`
 --
 ALTER TABLE `film`
   ADD CONSTRAINT `GenreID` FOREIGN KEY (`GenreID`) REFERENCES `genre` (`GenreID`),
-  ADD CONSTRAINT `KategoriID` FOREIGN KEY (`KategoriID`) REFERENCES `kategori_umur` (`KategoriID`),
-  ADD CONSTRAINT `UlasanID` FOREIGN KEY (`UlasanID`) REFERENCES `ulasan` (`UlasanID`);
+  ADD CONSTRAINT `KategoriID` FOREIGN KEY (`KategoriID`) REFERENCES `kategori_umur` (`KategoriID`);
 
 --
 -- Constraints for table `film_cast`
@@ -186,12 +181,6 @@ ALTER TABLE `film`
 ALTER TABLE `film_cast`
   ADD CONSTRAINT `CastID` FOREIGN KEY (`CastID`) REFERENCES `list_cast` (`CastID`),
   ADD CONSTRAINT `FilmID` FOREIGN KEY (`FilmID`) REFERENCES `film` (`FilmID`);
-
---
--- Constraints for table `ulasan`
---
-ALTER TABLE `ulasan`
-  ADD CONSTRAINT `IDFilm` FOREIGN KEY (`FilmID`) REFERENCES `film` (`FilmID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
