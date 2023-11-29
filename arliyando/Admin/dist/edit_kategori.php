@@ -195,7 +195,7 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_kategori.php" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Katgeori ID</label>
                                             <input type="text" name="Kategori ID" class="form-control" id="exampleFormControlInput1" placeholder="Kategori ID" value="<?php echo $KategoriID ?>">
