@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Genre - Admin</title>
+    <title>Edit Cast - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -183,11 +183,11 @@
 
                     <?php
                     include '../config/koneksi.php';
-                    $genre = mysqli_query($conn, "SELECT * from genre where GenreID='$_GET[GenreID]'");
+                    $List_cast = mysqli_query($conn, "SELECT * from list_cast where CastID='$_GET[CastID]'");
 
-                    while ($g = mysqli_fetch_array($genre)) {
-                        $GenreID = $g["GenreID"];
-                        $Nama_Genre = $g["Nama_Genre"];
+                    while ($l = mysqli_fetch_array($list_cast)) {
+                        $CastID = $g["CastID"];
+                        $Nama_Cast = $g["Nama_Cast"];
                     }
                     ?>
 
@@ -197,12 +197,12 @@
                                 <div class="col">
                                     <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
-                                            <input type="text" name="Genre ID" class="form-control" id="exampleFormControlInput1" placeholder="Genre ID" value="<?php echo $GenreID ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Cast ID</label>
+                                            <input type="text" name="Genre ID" class="form-control" id="exampleFormControlInput1" placeholder="Genre ID" value="<?php echo $CastID ?>">
                                         </div>
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
-                                            <input type="text" name="Nama Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Nama Cast</label>
+                                            <input type="text" name="Nama Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Cast_Genre ?>">
                                         </div>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
                                     </form>

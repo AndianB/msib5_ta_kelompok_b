@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Genre - Admin</title>
+    <title>Edit Kategori - Admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -183,11 +183,11 @@
 
                     <?php
                     include '../config/koneksi.php';
-                    $genre = mysqli_query($conn, "SELECT * from genre where GenreID='$_GET[GenreID]'");
+                    $kategori_umur = mysqli_query($conn, "SELECT * from kategori_umur where KategoriID='$_GET[KategoriID]'");
 
-                    while ($g = mysqli_fetch_array($genre)) {
-                        $GenreID = $g["GenreID"];
-                        $Nama_Genre = $g["Nama_Genre"];
+                    while ($k = mysqli_fetch_array($kategori_umur)) {
+                        $KategoriID = $k["KategoriID"];
+                        $Nama_Kategori = $k["Nama_Kategori"];
                     }
                     ?>
 
@@ -197,12 +197,12 @@
                                 <div class="col">
                                     <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
-                                            <input type="text" name="Genre ID" class="form-control" id="exampleFormControlInput1" placeholder="Genre ID" value="<?php echo $GenreID ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Katgeori ID</label>
+                                            <input type="text" name="Genre ID" class="form-control" id="exampleFormControlInput1" placeholder="Genre ID" value="<?php echo $KategoriID ?>">
                                         </div>
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
-                                            <input type="text" name="Nama Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Nama Kategori</label>
+                                            <input type="text" name="Nama Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Kategori ?>">
                                         </div>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
                                     </form>
