@@ -179,65 +179,51 @@
                     </div>
                     <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="header-title">Data Genre</h4>
+                    <h4 class="header-title">Edit Genre</h4>
+
+                    <?php
+                    include '../config/koneksi.php';
+                    $genre = mysqli_query($conn, "SELECT * from genre where GenreID='$_GET[GenreID]'");
+
+                    while ($g = mysqli_fetch_array($genre)) {
+                        $GenreID = $g["GenreID"];
+                        $Nama_Genre = $g["Nama_Genre"];
+                    }
+                    ?>
+
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
+                                            <input type="text" name="Genre ID" class="form-control" id="exampleFormControlInput1" placeholder="Genre ID" value="<?php echo $GenreID ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
+                                            <input type="text" name="Nama Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
+                                        </div>
+                                        <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
+                                    </form>
                                 </div>
-                                <div class="card-body">
-                                    <?php
-                                    include '../config/koneksi.php';
-                                    $query = mysqli_query($conn, "SELECT * from genre;");
-                                    ?>
-                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
-
-                                        <thead>
-                                            <tr>
-                                                <th>Genre ID</th>
-                                                <th>Nama Genre</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            </tr>
-                                            <?php
-                                            if (mysqli_num_rows($query) > 0) {
-                                                $no = 1;
-                                                while ($data = mysqli_fetch_array($query)) {
-                                            ?>
-                                                    <tr>
-                                                        <td> <?php echo $data["GenreID"] ?></td>
-                                                        <td> <?php echo $data["Nama_Genre"] ?></td>
-                                                        <td>
-                                                            <a href="edit_genre.php?GenreID=<?php echo $data["GenreID"] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                            <a href="proses_hapus_genre.php?GenreID=<?php echo $data["GenreID"] ?>" onclick="konfirmasiHapus( . $data['GenreID'] . )" class="btn btn-danger btn-sm">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
-                    </div> <!-- end row-->
-                </div> <!-- content -->
-
-                <!-- Footer Start -->
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <script>
-                                    document.write(new Date().getFullYear())
-                                </script> © Filmrev - by <b>Group B</b>
                             </div>
                         </div>
                     </div>
-                </footer>
-                <!-- end Footer -->
+
+                    <!-- Footer Start -->
+                    <footer class="footer">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12 text-center">
+                                    <script>
+                                        document.write(new Date().getFullYear())
+                                    </script> © Filmrev - by <b>Group B</b>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- end Footer -->
 
 </body>
 
@@ -265,35 +251,10 @@
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-
-
-</html>
 <script>
-    function konfirmasiHapus(GenreID) {
-
-        swal({
-                title: "Apakah Kamu yakin?",
-                text: "Data akan terhapus!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    // Redirect ke halaman Proses-hapus-data.php jika konfirmasi disetujui
-                    swal({
-                        title: "Good job!",
-                        text: "Data terhapus!",
-                        icon: "success",
-                    });
-                    setTimeout(function() {
-                        window.location.href = "../controller/proses_delete_obat.php?id_obat=" + id_obat;
-                    }, 2000);
-                } else {
-                    swal("Data Batal Di hapus!", {
-                        icon: "info",
-                    });
-                }
-            });
+    function save() {
+        swal('Good job!', 'data berhasil di update!', 'success');
     }
 </script>
+
+</html>
