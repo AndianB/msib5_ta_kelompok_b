@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 27 Nov 2023 pada 07.03
--- Versi server: 10.4.20-MariaDB
--- Versi PHP: 8.0.8
+-- Generation Time: Nov 29, 2023 at 10:44 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `film`
+-- Table structure for table `film`
 --
 
 CREATE TABLE `film` (
@@ -40,56 +40,80 @@ CREATE TABLE `film` (
   `GenreID` int(11) DEFAULT NULL,
   `KategoriID` int(11) DEFAULT NULL,
   `UlasanID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `film_cast`
+-- Table structure for table `film_cast`
 --
 
 CREATE TABLE `film_cast` (
   `FilmID` int(11) DEFAULT NULL,
   `CastID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `genre`
+-- Table structure for table `genre`
 --
 
 CREATE TABLE `genre` (
   `GenreID` int(11) NOT NULL,
   `Nama_Genre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `genre`
+--
+
+INSERT INTO `genre` (`GenreID`, `Nama_Genre`) VALUES
+(1, 'Horror'),
+(2, 'Romance'),
+(3, 'Thriller');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kategori_umur`
+-- Table structure for table `kategori_umur`
 --
 
 CREATE TABLE `kategori_umur` (
   `KategoriID` int(11) NOT NULL,
   `Nama_Kategori` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kategori_umur`
+--
+
+INSERT INTO `kategori_umur` (`KategoriID`, `Nama_Kategori`) VALUES
+(13, 'Remaja');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `list_cast`
+-- Table structure for table `list_cast`
 --
 
 CREATE TABLE `list_cast` (
   `CastID` int(11) NOT NULL,
   `Nama_Cast` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `list_cast`
+--
+
+INSERT INTO `list_cast` (`CastID`, `Nama_Cast`) VALUES
+(112, 'Reza Rahardian'),
+(113, 'Anya Geraldine');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `ulasan`
+-- Table structure for table `ulasan`
 --
 
 CREATE TABLE `ulasan` (
@@ -97,14 +121,14 @@ CREATE TABLE `ulasan` (
   `FilmID` int(11) DEFAULT NULL,
   `Username` varchar(255) NOT NULL,
   `Ulasan_Text` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `film`
+-- Indexes for table `film`
 --
 ALTER TABLE `film`
   ADD PRIMARY KEY (`FilmID`),
@@ -113,43 +137,43 @@ ALTER TABLE `film`
   ADD KEY `UlasanID` (`UlasanID`);
 
 --
--- Indeks untuk tabel `film_cast`
+-- Indexes for table `film_cast`
 --
 ALTER TABLE `film_cast`
   ADD KEY `FilmID` (`FilmID`),
   ADD KEY `CastID` (`CastID`);
 
 --
--- Indeks untuk tabel `genre`
+-- Indexes for table `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`GenreID`);
 
 --
--- Indeks untuk tabel `kategori_umur`
+-- Indexes for table `kategori_umur`
 --
 ALTER TABLE `kategori_umur`
   ADD PRIMARY KEY (`KategoriID`);
 
 --
--- Indeks untuk tabel `list_cast`
+-- Indexes for table `list_cast`
 --
 ALTER TABLE `list_cast`
   ADD PRIMARY KEY (`CastID`);
 
 --
--- Indeks untuk tabel `ulasan`
+-- Indexes for table `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`UlasanID`),
   ADD KEY `IDFilm` (`FilmID`);
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `film`
+-- Constraints for table `film`
 --
 ALTER TABLE `film`
   ADD CONSTRAINT `GenreID` FOREIGN KEY (`GenreID`) REFERENCES `genre` (`GenreID`),
@@ -157,14 +181,14 @@ ALTER TABLE `film`
   ADD CONSTRAINT `UlasanID` FOREIGN KEY (`UlasanID`) REFERENCES `ulasan` (`UlasanID`);
 
 --
--- Ketidakleluasaan untuk tabel `film_cast`
+-- Constraints for table `film_cast`
 --
 ALTER TABLE `film_cast`
   ADD CONSTRAINT `CastID` FOREIGN KEY (`CastID`) REFERENCES `list_cast` (`CastID`),
   ADD CONSTRAINT `FilmID` FOREIGN KEY (`FilmID`) REFERENCES `film` (`FilmID`);
 
 --
--- Ketidakleluasaan untuk tabel `ulasan`
+-- Constraints for table `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD CONSTRAINT `IDFilm` FOREIGN KEY (`FilmID`) REFERENCES `film` (`FilmID`);
