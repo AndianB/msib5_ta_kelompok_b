@@ -198,11 +198,11 @@
                                     <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Cast ID</label>
-                                            <input type="text" name="Genre ID" class="form-control" id="exampleFormControlInput1" placeholder="Genre ID" value="<?php echo $CastID ?>">
+                                            <input type="text" name="Cast ID" class="form-control" id="exampleFormControlInput1" placeholder="Cast ID" value="<?php echo $CastID ?>">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Nama Cast</label>
-                                            <input type="text" name="Nama Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Cast_Genre ?>">
+                                            <input type="text" name="Nama Cast" class="form-control" id="exampleFormControlInput1" placeholder="Nama Cast" value="<?php echo $Cast_Genre ?>">
                                         </div>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
                                     </form>
