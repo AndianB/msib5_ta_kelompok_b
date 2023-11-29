@@ -195,16 +195,16 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_genre.php" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_genre.php?GenreID=<?php echo $_GET['GenreID']?>" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
-                                            <input type="text" name="GenreID" class="form-control" id="exampleFormControlInput1" placeholder="GenreID" value="<?php echo $GenreID ?>">
+                                            <input type="text" name="GenreID" class="form-control" id="exampleFormControlInput1" placeholder="GenreID" value="<?php echo $GenreID ?>" disabled>
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
-                                            <input type="text" name="NamaGenre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
+                                            <input type="text" name="Nama_Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
                                         </div>
-                                        <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
+                                        <button name="Submit" value="Submit" type="submit" class="btn btn-success">Simpan</button>
                                     </form>
                                 </div>
                             </div>
