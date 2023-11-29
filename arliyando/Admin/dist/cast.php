@@ -170,7 +170,7 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Genre</li>
+                                        <li class="breadcrumb-item active">Cast</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Data Tables</h4>
