@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Datatables | Velonic - Bootstrap 5 Admin & Dashboard Template</title>
+    <title>Datatables - Admin & Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -38,7 +38,7 @@
                     <!-- Topbar Brand Logo -->
                     <div class="logo-topbar">
                         <!-- Logo light -->
-                        <a href="tables-datatable.html" class="logo-light">
+                        <a href="tables-datatable.php" class="logo-light">
                             <span class="logo-lg">
                                 <img src="assets/images/favicon.png" alt="logo">
                             </span>
@@ -48,7 +48,7 @@
                         </a>
 
                         <!-- Logo Dark -->
-                        <a href="tables-datatable.html" class="logo-dark">
+                        <a href="tables-datatable.php" class="logo-dark">
                             <span class="logo-lg">
                                 <img src="assets/images/favicon.png" alt="dark logo">
                             </span>
@@ -92,7 +92,7 @@
         <div class="leftside-menu">
 
             <!-- Brand Logo Light -->
-            <a href="tables-datatable.html" class="logo logo-light">
+            <a href="tables-datatable.php" class="logo logo-light">
                 <span class="logo-lg">
                     <img src="assets/images/favicon.png" alt="logo">
                 </span>
@@ -102,7 +102,7 @@
             </a>
 
             <!-- Brand Logo Dark -->
-            <a href="tables-datatable.html" class="logo logo-dark">
+            <a href="tables-datatable.php" class="logo logo-dark">
                 <span class="logo-lg">
                     <img src="assets/images/favicon.png" alt="dark logo">
                 </span>

@@ -170,7 +170,7 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Genre</li>
+                                        <li class="breadcrumb-item active">Cast</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Data Tables</h4>
@@ -183,11 +183,11 @@
 
                     <?php
                     include '../config/koneksi.php';
-                    $List_cast = mysqli_query($conn, "SELECT * from list_cast where CastID='$_GET[CastID]'");
+                    $list_cast = mysqli_query($conn, "SELECT * from list_cast where CastID='$_GET[CastID]'");
 
                     while ($l = mysqli_fetch_array($list_cast)) {
-                        $CastID = $g["CastID"];
-                        $Nama_Cast = $g["Nama_Cast"];
+                        $CastID = $l["CastID"];
+                        $Nama_Cast = $l["Nama_Cast"];
                     }
                     ?>
 
@@ -195,14 +195,14 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_cast.php" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_list_cast.php" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Cast ID</label>
                                             <input type="text" name="Cast ID" class="form-control" id="exampleFormControlInput1" placeholder="Cast ID" value="<?php echo $CastID ?>">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Nama Cast</label>
-                                            <input type="text" name="Nama Cast" class="form-control" id="exampleFormControlInput1" placeholder="Nama Cast" value="<?php echo $Cast_Genre ?>">
+                                            <input type="text" name="Nama Cast" class="form-control" id="exampleFormControlInput1" placeholder="Nama Cast" value="<?php echo $Nama_Cast ?>">
                                         </div>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
                                     </form>
