@@ -27,13 +27,13 @@
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
 
+
 <body>
     <!-- Begin page -->
     <div class="wrapper">
         <!-- ========== Topbar Start ========== -->
         <?php include "template/top-bar.php" ?>
         <!-- ========== Topbar End ========== -->
-
 
         <!-- ========== Left Sidebar Start ========== -->
         <?php include "template/left-sidebar.php" ?>
@@ -57,7 +57,7 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Data Tables</li>
+                                        <li class="breadcrumb-item active">Datatables</li>
                                     </ol>
                                 </div>
                                 <h4 class="page-title">Data Tables</h4>
@@ -69,85 +69,45 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <h4 class="header-title">Data</h4>
-
-                                </div>
+                                <!-- <div class="card-header">
+                                    <a class="btn btn-primary text-light"> Tambah Data </a>
+                                </div> -->
                                 <div class="card-body">
+                                    <?php
+                                    include '../config/koneksi.php';
+                                    $query = mysqli_query($conn, "SELECT f.Judul, f.Link_Trailer, f.Synopsis, f.Rating, f.Durasi_Film, g.Nama_Genre, k.Nama_Kategori FROM film as f join genre as g on g.GenreID=f.FilmID join kategori_umur as k on k.KategoriID=f.FilmID Order by f.FilmID asc;");
+                                    ?>
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                                <th>Action</th>
+                                                <th>Judul</th>
+                                                <th>Link</th>
+                                                <th>Sinopsis</th>
+                                                <th>Rating</th>
+                                                <th>Durasi</th>
+                                                <th>Genre</th>
+                                                <th>Kategori</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#" onclick="return confirm('Delete data?')" class="btn btn-danger btn-sm">Delete</a>
-                                                </td>
                                             </tr>
-                                            <tr>
-                                                <td>Garrett Winters</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>63</td>
-                                                <td>2011/07/25</td>
-                                                <td>$170,750</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#" onclick="return confirm('Delete data?')" class="btn btn-danger btn-sm">Delete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Ashton Cox</td>
-                                                <td>Junior Technical Author</td>
-                                                <td>San Francisco</td>
-                                                <td>66</td>
-                                                <td>2009/01/12</td>
-                                                <td>$86,000</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#" onclick="return confirm('Delete data?')" class="btn btn-danger btn-sm">Delete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Cedric Kelly</td>
-                                                <td>Senior Javascript Developer</td>
-                                                <td>Edinburgh</td>
-                                                <td>22</td>
-                                                <td>2012/03/29</td>
-                                                <td>$433,060</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#" onclick="return confirm('Delete data?')" class="btn btn-danger btn-sm">Delete</a>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>Airi Satou</td>
-                                                <td>Accountant</td>
-                                                <td>Tokyo</td>
-                                                <td>33</td>
-                                                <td>2008/11/28</td>
-                                                <td>$162,700</td>
-                                                <td>
-                                                    <a href="#" class="btn btn-warning btn-sm">Edit</a>
-                                                    <a href="#" onclick="return confirm('Delete data?')" class="btn btn-danger btn-sm">Delete</a>
-                                                </td>
-                                            </tr>
+                                            <?php
+                                            if (mysqli_num_rows($query) > 0) {
+                                                $no = 1;
+                                                while ($data = mysqli_fetch_array($query)) {
+                                            ?>
+                                                    <tr>
+                                                        <td> <?php echo $data["Judul"] ?></td>
+                                                        <td> <?php echo $data["Link_Trailer"] ?></td>
+                                                        <td> <?php echo $data["Synopsis"] ?></td>
+                                                        <td> <?php echo $data["Rating"] ?></td>
+                                                        <td> <?php echo $data["Durasi_Film"] ?></td>
+                                                        <td> <?php echo $data["Nama_Genre"] ?></td>
+                                                        <td> <?php echo $data["Nama_Kategori"] ?></td>
+                                                    </tr>
+                                                <?php } ?>
+                                            <?php } ?>
                                         </tbody>
                                     </table>
 
@@ -160,8 +120,12 @@
                 <!-- Footer Start -->
                 <?php include "template/footer.php" ?>
                 <!-- end Footer -->
+            </div>
+        </div>
+    </div>        
 
 </body>
+
 <!-- Vendor js -->
 <script src="assets/js/vendor.min.js"></script>
 
@@ -185,5 +149,7 @@
 
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
+
+
 
 </html>

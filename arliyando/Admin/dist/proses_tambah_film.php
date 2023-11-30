@@ -7,6 +7,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
 
+$filmid = $_POST["FilmID"];
 $judul = $_POST["Judul"];
 $gambar = $_FILES["image"]['name'];
 $link = $_POST["Link_Trailer"];
@@ -18,6 +19,6 @@ $sutradara = $_POST["Sutradara"];
 $genre = $_POST["Genre"];
 $kategori = $_POST["Kategori"];
 
-$result = mysqli_query($conn, "UPDATE `film` set `Judul` = '$judul', `Gambar`='$gambar', `Link_Trailer`='$link', `Synopsis`='$sinopsis', `Rating`='$rating', `Tanggal_Release`='$tgl_rilis', `Durasi_Film`='$durasi', `Sutradara`='$sutradara', `GenreID`='$genre', `KategoriID`='$kategori' where `FilmID` = '$_GET[FilmID]'");
+$result = mysqli_query($conn, "INSERT INTO `film` (`FilmID`, `Judul`, `Gambar`, `Link_Trailer`, `Synopsis`, `Rating`, `Tanggal_Release`, `Durasi_Film`, `Sutradara`, `GenreID`, `KategoriID`) VALUES ('$filmid', '$judul', '$gambar', '$link', '$sinopsis', '$rating', '$tgl_rilis', '$durasi', '$sutradara', '$genre', '$kategori');");
 
 header("Location:data_film.php");

@@ -80,14 +80,14 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_kategori.php" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_kategori.php?KategoriID=<?php echo $_GET['KategoriID'] ?>" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Katgeori ID</label>
-                                            <input type="text" name="Kategori ID" class="form-control" id="exampleFormControlInput1" placeholder="Kategori ID" value="<?php echo $KategoriID ?>">
+                                            <input type="text" name="Kategori_ID" class="form-control" id="exampleFormControlInput1" placeholder="Kategori ID" value="<?php echo $KategoriID ?>" disabled>
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Nama Kategori</label>
-                                            <input type="text" name="Nama Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Nama Kategori" value="<?php echo $Nama_Kategori ?>">
+                                            <input type="text" name="Nama_Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Nama Kategori" value="<?php echo $Nama_Kategori ?>">
                                         </div>
                                         <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>

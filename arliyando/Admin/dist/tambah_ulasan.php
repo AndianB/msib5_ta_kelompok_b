@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Genre - Admin | Filmrev</title>
+    <title>Tambah Ulasan - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -56,40 +56,34 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Genre</li>
-                                        <li class="breadcrumb-item active">Edit Data Genre</li>
+                                        <li class="breadcrumb-item active">Ulasan</li>
+                                        <li class="breadcrumb-item active">Tambah Data Ulasan</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Edit Data Genre</h4>
+                                <h4 class="page-title">Tambah Data Ulasan</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
-                    <?php
-                    include '../config/koneksi.php';
-                    $genre = mysqli_query($conn, "SELECT * from genre where GenreID='$_GET[GenreID]'");
-
-                    while ($g = mysqli_fetch_array($genre)) {
-                        $GenreID = $g["GenreID"];
-                        $Nama_Genre = $g["Nama_Genre"];
-                    }
-                    ?>
 
                     <div class="content">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_genre.php?GenreID=<?php echo $_GET['GenreID']?>" method="post" enctype="multipart/form-data">
-                                        <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
-                                            <input type="text" name="GenreID" class="form-control" id="exampleFormControlInput1" placeholder="GenreID" value="<?php echo $GenreID ?>" disabled>
+                                    <form action="proses_tambah_ulasan.php" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Username</label>
+                                            <input type="text" name="Username" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Username">
                                         </div>
-                                        <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
-                                            <input type="text" name="Nama_Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Ulasan</label>
+                                            <input type="text" name="Ulasan" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Ulasan">
                                         </div>
-                                        <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
-                                        <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
+                                        
+                                        <div class="mb-3">
+                                            <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
+                                            <button type="submit" name="tambah" class="btn btn-success" value="simpan">Simpan</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -99,6 +93,10 @@
                     <!-- Footer Start -->
                     <?php include "template/footer.php" ?>
                     <!-- end Footer -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

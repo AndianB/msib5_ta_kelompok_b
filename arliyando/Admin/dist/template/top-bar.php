@@ -2,9 +2,9 @@
     <div class="topbar container-fluid">
         <div class="d-flex align-items-center gap-1">
 
-        <!-- Topbar Brand Logo -->
+            <!-- Topbar Brand Logo -->
             <!-- <div class="logo-topbar"> -->
-        <!-- Logo light -->
+            <!-- Logo light -->
             <!-- <a href="index.html" class="logo-light">
                 <span class="logo-lg">
                   <img src="assets/images/favicon.png" alt="logo" />
@@ -14,7 +14,7 @@
                 </span>
               </a> -->
 
-        <!-- Logo Dark -->
+            <!-- Logo Dark -->
             <!-- <a href="index.html" class="logo-dark">
                 <span class="logo-lg">
                   <img src="assets/images/favicon.png" alt="dark logo" />

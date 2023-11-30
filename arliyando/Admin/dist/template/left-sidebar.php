@@ -32,9 +32,9 @@
                 </a>
                 <div class="collapse" id="sidebarTables">
                     <ul class="side-nav-second-level">
-                        <li>
+                        <!-- <li>
                             <a href="index.php">Data Tables</a>
-                        </li>
+                        </li> -->
                         <li>
                             <a href="data_film.php">Film</a>
                         </li>
@@ -46,6 +46,9 @@
                         </li>
                         <li>
                             <a href="data_kategoriumur.php">Kategori Umur</a>
+                        </li>
+                        <li>
+                            <a href="data_ulasan.php">Ulasan</a>
                         </li>
                     </ul>
                 </div>

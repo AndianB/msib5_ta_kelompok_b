@@ -69,7 +69,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <a class="btn btn-primary text-light"> Tambah Data </a>
+                                    <a class="btn btn-primary text-light" href="tambah_cast.php"> Tambah Data </a>
                                 </div>
                                 <div class="card-body">
                                     <?php

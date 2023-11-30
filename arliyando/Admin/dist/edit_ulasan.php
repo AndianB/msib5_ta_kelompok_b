@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Genre - Admin | Filmrev</title>
+    <title>Edit Ulasan - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -56,22 +56,24 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Genre</li>
-                                        <li class="breadcrumb-item active">Edit Data Genre</li>
+                                        <li class="breadcrumb-item active">Ulasan</li>
+                                        <li class="breadcrumb-item active">Edit Data Ulasan</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Edit Data Genre</h4>
+                                <h4 class="page-title">Edit Data Ulasan</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
+
                     <?php
                     include '../config/koneksi.php';
-                    $genre = mysqli_query($conn, "SELECT * from genre where GenreID='$_GET[GenreID]'");
+                    $ulasan = mysqli_query($conn, "SELECT * from ulasan where UlasanID='$_GET[UlasanID]'");
 
-                    while ($g = mysqli_fetch_array($genre)) {
-                        $GenreID = $g["GenreID"];
-                        $Nama_Genre = $g["Nama_Genre"];
+                    while ($u = mysqli_fetch_array($ulasan)) {
+                        $UlasanID = $u["UlasanID"];
+                        $Username = $u["Username"];
+                        $Ulasan = $u["Ulasan_Text"];
                     }
                     ?>
 
@@ -79,17 +81,21 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_genre.php?GenreID=<?php echo $_GET['GenreID']?>" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_ulasan.php?UlasanID=<?php echo $_GET['UlasanID'] ?>" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Genre ID</label>
-                                            <input type="text" name="GenreID" class="form-control" id="exampleFormControlInput1" placeholder="GenreID" value="<?php echo $GenreID ?>" disabled>
+                                            <label for="exampleFormControlInput1" class="form-label">Ulasan ID</label>
+                                            <input type="text" name="UlasanID" class="form-control" id="exampleFormControlInput1" placeholder="Ulasan ID" value="<?php echo $UlasanID ?>" disabled>
                                         </div>
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
-                                            <input type="text" name="Nama_Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Username</label>
+                                            <input type="text" name="Username" class="form-control" id="exampleFormControlInput1" placeholder="Username" value="<?php echo $Username ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Ulasan</label>
+                                            <input type="text" name="Ulasan_Text" class="form-control" id="exampleFormControlInput1" placeholder="Ulasan" value="<?php echo $Ulasan ?>">
                                         </div>
                                         <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
-                                        <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
+                                        <button name="tambah" type="submit" class="btn btn-success" value="simpan">Simpan</button>
                                     </form>
                                 </div>
                             </div>
@@ -99,6 +105,10 @@
                     <!-- Footer Start -->
                     <?php include "template/footer.php" ?>
                     <!-- end Footer -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 

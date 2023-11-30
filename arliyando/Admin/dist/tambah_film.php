@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Film - Admin | Filmrev</title>
+    <title>Tambah Film - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -57,96 +57,79 @@
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
                                         <li class="breadcrumb-item active">Film</li>
-                                        <li class="breadcrumb-item active">Edit Data Film</li>
+                                        <li class="breadcrumb-item active">Tambah Data Film</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Edit Data Film</h4>
+                                <h4 class="page-title">Tambah Data Film</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
-                    <?php
-                    include '../config/koneksi.php';
-                    $film = mysqli_query($conn, "SELECT * from film where FilmID='$_GET[FilmID]'");
-
-                    while ($f = mysqli_fetch_array($film)) {
-                        $FilmID = $f["FilmID"];
-                        $Judul = $f["Judul"];
-                        $Gambar = $f["Gambar"];
-                        $Link = $f["Link_Trailer"];
-                        $Sinopsis = $f["Synopsis"];
-                        $Rating = $f["Rating"];
-                        $Tgl = $f["Tanggal_Release"];
-                        $Durasi = $f["Durasi_Film"];
-                        $Sutradara = $f["Sutradara"];
-                        $Genre = $f["GenreID"];
-                        $Kategori = $f["KategoriID"];
-                    }
-                    ?>
 
                     <div class="content">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_film.php?FilmID=<?php echo $_GET['FilmID']?>" method="post" enctype="multipart/form-data">
-                                    <div class="mb-3">
+                                    <form action="proses_tambah_film.php" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">ID Film</label>
-                                            <input type="text" name="FilmID" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan ID Film" value="<?php echo $FilmID ?>" disabled>
+                                            <input type="text" name="FilmID" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan ID Film">
                                         </div>
                                         <div class="mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Judul</label>
-                                            <input type="text" name="Judul" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Judul" value="<?php echo $Judul ?>">
+                                            <input type="text" name="Judul" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Judul">
                                         </div>
                                         <div class="form-group mb-3">
                                             <label class="form-label" for="image">Gambar</label>
-                                            <img src="assets/images/uploads/<?php echo $f['Gambar'] ?>" width="100px">
-                                            <input type="file" class="form-control mt-2" id="image" name="image" value="<?php echo $Gambar ?>">
+                                            <input type="file" class="form-control" id="image" name="image">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Link Trailer</label>
-                                            <input type="text" name="Link_Trailer" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Link" value="<?php echo $Link ?>">
+                                            <input type="text" name="Link_Trailer" class="form-control" id="exampleFormControlInput1" placeholder="Masukan Link">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Sinopsis</label>
                                             <!-- <input type="text-area" name="Sinopsis" class="form-control" id="exampleFormControlInput1" placeholder="Isi sinopsis"> -->
-                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="Sinopsis" placeholder="Isi Sinopsis" rows="3" value="<?php echo $Sinopsis ?>"><?php echo $Sinopsis ?></textarea>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" name="Sinopsis" placeholder="Isi Sinopsis" rows="3"></textarea>
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Rating</label>
-                                            <input type="text" name="Rating" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Rating" value="<?php echo $Rating ?>">
+                                            <input type="text" name="Rating" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Rating">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Tanggal rilis</label>
-                                            <input type="date" name="Tanggal_rilis" class="form-control" id="exampleFormControlInput1" placeholder=" Isi Tanggal Rilis" value="<?php echo $Tgl ?>">
+                                            <input type="date" name="Tanggal_rilis" class="form-control" id="exampleFormControlInput1" placeholder=" Isi Tanggal Rilis">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Durasi</label>
-                                            <input type="number" name="Durasi" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Durasi (Menit)" value="<?php echo $Durasi ?>">
+                                            <input type="number" name="Durasi" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Durasi (Menit)">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Sutradara</label>
-                                            <input type="text" name="Sutradara" class="form-control" id="exampleFormControlInput1" placeholder="Isi Sutradara" value="<?php echo $Sutradara ?>">
+                                            <input type="text" name="Sutradara" class="form-control" id="exampleFormControlInput1" placeholder="Isi Sutradara">
                                         </div>
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Genre</label>
+                                            <label for="exampleFormControlInput1" class="form-label">GenreID</label>
                                             <!-- <input type="text" name="Genre" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Genre"> -->
                                             <select class="form-control" id="genre" name="Genre" required>
-                                                <option value="" disabled selected hidden><?php $Genre ?></option>
-                                                <option value="1" <?php if ($Genre == '1') echo 'selected'; ?>>Horror</option>
-                                                <option value="1" <?php if ($Genre == '2') echo 'selected'; ?>>Romance</option>
-                                                <option value="1" <?php if ($Genre == '3') echo 'selected'; ?>>Thriler</option>
+                                                <option value="" disabled selected hidden>Pilih Genre</option>
+                                                <option value="1">Horror</option>
+                                                <option value="2">Romance</option>
+                                                <option value="3">Thriler</option>
                                             </select>
                                         </div>
                                         <div class=" mb-4">
                                             <label for="exampleFormControlInput1" class="form-label">Kategori</label>
                                             <!-- <input type="text" name="Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Kategori"> -->
                                             <select class="form-control" id="Kategori" name="Kategori" required>
-                                                <option value="" disabled selected hidden><?php $Kategori ?> </option>
-                                                <option value="13" <?php if ($Kategori == '13') echo 'selected';?>>Remaja</option>
+                                                <option value="" disabled selected hidden>Pilih Kategori</option>
+                                                <option value="13">Remaja</option>
                                             </select>
                                         </div>
-                                        <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
-                                        <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
+                                        <div class="mb-3">
+                                            <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
+                                            <button type="submit" name="tambah" class="btn btn-success" value="simpan">Simpan</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>
@@ -156,6 +139,10 @@
                     <!-- Footer Start -->
                     <?php include "template/footer.php" ?>
                     <!-- end Footer -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 </body>
 
