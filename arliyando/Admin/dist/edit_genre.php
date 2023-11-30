@@ -88,12 +88,8 @@
                                             <label for="exampleFormControlInput1" class="form-label">Nama Genre</label>
                                             <input type="text" name="Nama_Genre" class="form-control" id="exampleFormControlInput1" placeholder="Nama Genre" value="<?php echo $Nama_Genre ?>">
                                         </div>
-<<<<<<< HEAD
                                         <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
-=======
-                                        <button name="Submit" value="Submit" type="submit" class="btn btn-success">Simpan</button>
->>>>>>> 4411e6dbb4f91eec6cd9d087227671b5c370bf94
                                     </form>
                                 </div>
                             </div>

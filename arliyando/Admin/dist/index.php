@@ -70,8 +70,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="header-title">Data</h4>
-
+                                <a class="btn btn-primary text-light" href="tambah.php"> Tambah Data </a>
                                 </div>
                                 <div class="card-body">
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">

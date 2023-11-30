@@ -68,9 +68,9 @@
 
                     <?php
                     include '../config/koneksi.php';
-                    $film = mysqli_query($conn, "SELECT * from film where FilmID='$_GET[FilmID]'");
+                    $queryfilm = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori from film as f join genre as g on g.GenreID=f.GenreID join kategori_umur as k on k.KategoriID=f.KategoriID ORDER BY f.FilmID asc;");
 
-                    while ($f = mysqli_fetch_array($film)) {
+                    while ($f = mysqli_fetch_array($queryfilm)) {
                         $Judul = $f["Judul"];
                         $Link = $f["Link_Trailer"];
                         $Sinopsis = $f["Synopsis"];
@@ -79,7 +79,7 @@
                         $Durasi = $f["Durasi_Film"];
                         $Sutradara = $f["Sutradara"];
                         $Genre = $f["GenreID"];
-                        $Kategori = $f["KategorID"];
+                        $Kategori = $f["KategoriID"];
                     }
                     ?>
 
