@@ -68,9 +68,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <div class="card-header">
-                                    <a class="btn btn-primary text-light" href="tambah_ulasan.php"> Tambah Data </a>
-                                </div>
+
                                 <div class="card-body">
                                     <?php
                                     include '../config/koneksi.php';
