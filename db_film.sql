@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2023 at 05:54 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Waktu pembuatan: 30 Nov 2023 pada 03.44
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `film`
+-- Struktur dari tabel `film`
 --
 
 CREATE TABLE `film` (
@@ -39,32 +39,46 @@ CREATE TABLE `film` (
   `Sutradara` varchar(255) DEFAULT NULL,
   `GenreID` int(11) DEFAULT NULL,
   `KategoriID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `film`
+--
+
+INSERT INTO `film` (`FilmID`, `Judul`, `Gambar`, `Link_Trailer`, `Synopsis`, `Rating`, `Tanggal_Release`, `Durasi_Film`, `Sutradara`, `GenreID`, `KategoriID`) VALUES
+(0, 'Venom', 'pppp', 'https://open.spotify.com/', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatum dolores quaerat fugit labore praesentium.', '8.5', '2023-11-08', 120, 'Tom Hardy', 1, 13);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `film_cast`
+-- Struktur dari tabel `film_cast`
 --
 
 CREATE TABLE `film_cast` (
   `FilmID` int(11) DEFAULT NULL,
   `CastID` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `film_cast`
+--
+
+INSERT INTO `film_cast` (`FilmID`, `CastID`) VALUES
+(0, 113);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `genre`
+-- Struktur dari tabel `genre`
 --
 
 CREATE TABLE `genre` (
   `GenreID` int(11) NOT NULL,
   `Nama_Genre` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `genre`
+-- Dumping data untuk tabel `genre`
 --
 
 INSERT INTO `genre` (`GenreID`, `Nama_Genre`) VALUES
@@ -75,16 +89,16 @@ INSERT INTO `genre` (`GenreID`, `Nama_Genre`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_umur`
+-- Struktur dari tabel `kategori_umur`
 --
 
 CREATE TABLE `kategori_umur` (
   `KategoriID` int(11) NOT NULL,
   `Nama_Kategori` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `kategori_umur`
+-- Dumping data untuk tabel `kategori_umur`
 --
 
 INSERT INTO `kategori_umur` (`KategoriID`, `Nama_Kategori`) VALUES
@@ -93,16 +107,16 @@ INSERT INTO `kategori_umur` (`KategoriID`, `Nama_Kategori`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `list_cast`
+-- Struktur dari tabel `list_cast`
 --
 
 CREATE TABLE `list_cast` (
   `CastID` int(11) NOT NULL,
   `Nama_Cast` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `list_cast`
+-- Dumping data untuk tabel `list_cast`
 --
 
 INSERT INTO `list_cast` (`CastID`, `Nama_Cast`) VALUES
@@ -112,21 +126,28 @@ INSERT INTO `list_cast` (`CastID`, `Nama_Cast`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ulasan`
+-- Struktur dari tabel `ulasan`
 --
 
 CREATE TABLE `ulasan` (
   `UlasanID` int(11) NOT NULL,
   `Username` varchar(255) NOT NULL,
   `Ulasan_Text` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `ulasan`
+--
+
+INSERT INTO `ulasan` (`UlasanID`, `Username`, `Ulasan_Text`) VALUES
+(0, 'Neck Deep', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit ipsa pariatur fugiat adipisci? Nobis deserunt velit facilis perspiciatis repellendus?');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `film`
+-- Indeks untuk tabel `film`
 --
 ALTER TABLE `film`
   ADD PRIMARY KEY (`FilmID`),
@@ -134,49 +155,49 @@ ALTER TABLE `film`
   ADD KEY `KategoriID` (`KategoriID`);
 
 --
--- Indexes for table `film_cast`
+-- Indeks untuk tabel `film_cast`
 --
 ALTER TABLE `film_cast`
   ADD KEY `FilmID` (`FilmID`),
   ADD KEY `CastID` (`CastID`);
 
 --
--- Indexes for table `genre`
+-- Indeks untuk tabel `genre`
 --
 ALTER TABLE `genre`
   ADD PRIMARY KEY (`GenreID`);
 
 --
--- Indexes for table `kategori_umur`
+-- Indeks untuk tabel `kategori_umur`
 --
 ALTER TABLE `kategori_umur`
   ADD PRIMARY KEY (`KategoriID`);
 
 --
--- Indexes for table `list_cast`
+-- Indeks untuk tabel `list_cast`
 --
 ALTER TABLE `list_cast`
   ADD PRIMARY KEY (`CastID`);
 
 --
--- Indexes for table `ulasan`
+-- Indeks untuk tabel `ulasan`
 --
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`UlasanID`);
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `film`
+-- Ketidakleluasaan untuk tabel `film`
 --
 ALTER TABLE `film`
   ADD CONSTRAINT `GenreID` FOREIGN KEY (`GenreID`) REFERENCES `genre` (`GenreID`),
   ADD CONSTRAINT `KategoriID` FOREIGN KEY (`KategoriID`) REFERENCES `kategori_umur` (`KategoriID`);
 
 --
--- Constraints for table `film_cast`
+-- Ketidakleluasaan untuk tabel `film_cast`
 --
 ALTER TABLE `film_cast`
   ADD CONSTRAINT `CastID` FOREIGN KEY (`CastID`) REFERENCES `list_cast` (`CastID`),
