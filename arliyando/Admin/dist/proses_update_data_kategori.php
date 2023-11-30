@@ -2,7 +2,7 @@
 include '../config/koneksi.php';
 
 
-// get variable from form input
+//get variable from form input
 
 $Nama_Kategori = $_POST["Nama_Kategori"];
 
