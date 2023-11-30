@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Edit Cast - Admin | Filmrev</title>
+    <title>Edit Film - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -56,11 +56,11 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Cast</li>
-                                        <li class="breadcrumb-item active">Edit Data Cast</li>
+                                        <li class="breadcrumb-item active">Film</li>
+                                        <li class="breadcrumb-item active">Edit Data Film</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Edit Data Cast</h4>
+                                <h4 class="page-title">Edit Data Film</h4>
                             </div>
                         </div>
                     </div>
@@ -68,11 +68,18 @@
 
                     <?php
                     include '../config/koneksi.php';
-                    $list_cast = mysqli_query($conn, "SELECT * from list_cast where CastID='$_GET[CastID]'");
+                    $film = mysqli_query($conn, "SELECT * from film where FilmID='$_GET[FilmID]'");
 
-                    while ($l = mysqli_fetch_array($list_cast)) {
-                        $CastID = $l["CastID"];
-                        $Nama_Cast = $l["Nama_Cast"];
+                    while ($f = mysqli_fetch_array($film)) {
+                        $Judul = $f["Judul"];
+                        $Link = $f["Link_Trailer"];
+                        $Sinopsis = $f["Synopsis"];
+                        $Rating = $f["Rating"];
+                        $tgl_rilis = $f["Tanggal_Release"];
+                        $Durasi = $f["Durasi_Film"];
+                        $Sutradara = $f["Sutradara"];
+                        $Genre = $f["GenreID"];
+                        $Kategori = $f["KategorID"];
                     }
                     ?>
 
@@ -80,14 +87,42 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_list_cast.php" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_film.php" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Cast ID</label>
-                                            <input type="text" name="Cast ID" class="form-control" id="exampleFormControlInput1" placeholder="Cast ID" value="<?php echo $CastID ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Judul</label>
+                                            <input type="text" name="Judul" class="form-control" id="exampleFormControlInput1" placeholder="Judul" value="<?php echo $Judul ?>">
                                         </div>
                                         <div class=" mb-3">
-                                            <label for="exampleFormControlInput1" class="form-label">Nama Cast</label>
-                                            <input type="text" name="Nama Cast" class="form-control" id="exampleFormControlInput1" placeholder="Nama Cast" value="<?php echo $Nama_Cast ?>">
+                                            <label for="exampleFormControlInput1" class="form-label">Link Trailer</label>
+                                            <input type="text" name="Link_Trailer" class="form-control" id="exampleFormControlInput1" placeholder="Link Trailer" value="<?php echo $Link ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Sinopsis</label>
+                                            <input type="text" name="Sinopsis" class="form-control" id="exampleFormControlInput1" placeholder="Sinopsis" value="<?php echo $Sinopsis ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Rating</label>
+                                            <input type="text" name="Rating" class="form-control" id="exampleFormControlInput1" placeholder="Rating" value="<?php echo $Rating ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Tanggal rilis</label>
+                                            <input type="text" name="Tanggal_rilis" class="form-control" id="exampleFormControlInput1" placeholder="Tanggal rilis" value="<?php echo $tgl_rilis ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Durasi</label>
+                                            <input type="text" name="Durasi" class="form-control" id="exampleFormControlInput1" placeholder="Durasi" value="<?php echo $Durasi ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Sutradara</label>
+                                            <input type="text" name="Sutradara" class="form-control" id="exampleFormControlInput1" placeholder="Sutradara" value="<?php echo $Sutradara ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">GenreID</label>
+                                            <input type="text" name="Genre" class="form-control" id="exampleFormControlInput1" placeholder="Genre" value="<?php echo $Genre ?>">
+                                        </div>
+                                        <div class=" mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Kategori</label>
+                                            <input type="text" name="Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Kategori" value="<?php echo $Kategori ?>">
                                         </div>
                                         <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
