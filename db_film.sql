@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2023 pada 03.44
+-- Waktu pembuatan: 30 Nov 2023 pada 09.40
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -46,7 +46,9 @@ CREATE TABLE `film` (
 --
 
 INSERT INTO `film` (`FilmID`, `Judul`, `Gambar`, `Link_Trailer`, `Synopsis`, `Rating`, `Tanggal_Release`, `Durasi_Film`, `Sutradara`, `GenreID`, `KategoriID`) VALUES
-(0, 'Venom', 'pppp', 'https://open.spotify.com/', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatum dolores quaerat fugit labore praesentium.', '8.5', '2023-11-08', 120, 'Tom Hardy', 1, 13);
+(0, 'Venom', 'pppp', 'https://open.spotify.com/', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptatum dolores quaerat fugit labore praesentium.', '8.5', '2023-11-08', 120, 'Tom Hardy', 1, 13),
+(1, 'Love Story', 'pp', 'https://getbootstrap.com/docs/5.0/forms/form-control/', 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quibusdam consectetur eum sed!', '6.5', '2023-11-05', 90, 'Lorem Ipsum', 2, 13),
+(12, 'Sewu Dino', 'contoh.jpg', 'https://www.youtube.com/watch?v=12sXNFbQa6I', 'Ditengah kesulitan ekonomi, Sri diterima bekerja untuk keluarga Atmojo dengan bayaran yang tinggi, karena keunikan yang ia miliki, yaitu lahir pada hari Jumat Kliwon. Bersama Erna dan Dini, mereka dibawa ke sebuah gubuk tersembunyi di tengah hutan. Di gubuk tersebut, Sri, Erna, dan Dini bertugas untuk memandikan Dela Atmojo, cucu dari Mbah Karsa Atmojo yang tidak sadarkan diri karena kutukan santet Sewu Dino, salah satu santet yang paling mengerikan. Mereka tidak bisa lari dari gubuk tersebut karena terikat perjanjian mistis dengan Mbah Karsa Atmojo, dan mereka harus selesaikan ritual sampai hari ke 1000. Jika melanggar, kematian menanti mereka.', '7.0', '2023-04-19', 120, 'Kimo Stamboel', 1, 13);
 
 -- --------------------------------------------------------
 
@@ -121,7 +123,8 @@ CREATE TABLE `list_cast` (
 
 INSERT INTO `list_cast` (`CastID`, `Nama_Cast`) VALUES
 (112, 'Reza Rahardian'),
-(113, 'Anya Geraldine');
+(113, 'Anya Geraldine'),
+(114, 'Angga Yunanda');
 
 -- --------------------------------------------------------
 
@@ -140,7 +143,8 @@ CREATE TABLE `ulasan` (
 --
 
 INSERT INTO `ulasan` (`UlasanID`, `Username`, `Ulasan_Text`) VALUES
-(0, 'Neck Deep', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate velit ipsa pariatur fugiat adipisci? Nobis deserunt velit facilis perspiciatis repellendus?');
+(2, 'Neck Deep', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cum voluptatibus ducimus rem a error harum assumenda nobis eius tenetur!'),
+(4, 'Chand Parwez', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, doloremque reiciendis. Magnam mollitia, consequuntur odit incidunt repudiandae repellat saepe quis!');
 
 --
 -- Indexes for dumped tables
@@ -184,6 +188,16 @@ ALTER TABLE `list_cast`
 --
 ALTER TABLE `ulasan`
   ADD PRIMARY KEY (`UlasanID`);
+
+--
+-- AUTO_INCREMENT untuk tabel yang dibuang
+--
+
+--
+-- AUTO_INCREMENT untuk tabel `ulasan`
+--
+ALTER TABLE `ulasan`
+  MODIFY `UlasanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

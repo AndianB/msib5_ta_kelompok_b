@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Film - Admin | Filmrev</title>
+    <title>Ulasan - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -26,35 +26,6 @@
     <!-- Icons css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
-<script>
-    function konfirmasiHapus(GenreID) {
-
-        swal({
-                title: "Apakah Kamu yakin?",
-                text: "Data akan terhapus!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    // Redirect ke halaman Proses-hapus-data.php jika konfirmasi disetujui
-                    swal({
-                        title: "Good job!",
-                        text: "Data terhapus!",
-                        icon: "success",
-                    });
-                    setTimeout(function() {
-                        window.location.href = "proses_hapus_film.php?FilmID=" + FilmID;
-                    }, 2000);
-                } else {
-                    swal("Data Batal Di hapus!", {
-                        icon: "info",
-                    });
-                }
-            });
-    }
-</script>
 
 <body>
     <!-- Begin page -->
@@ -85,10 +56,10 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Film</li>
+                                        <li class="breadcrumb-item active">Ulasan</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Data Film</h4>
+                                <h4 class="page-title">Data Ulasan</h4>
                             </div>
                         </div>
                     </div>
@@ -98,47 +69,40 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <a class="btn btn-primary text-light" href="tambah_film.php"> Tambah Data </a>
+                                    <a class="btn btn-primary text-light" href="tambah_ulasan.php"> Tambah Data </a>
                                 </div>
                                 <div class="card-body">
+                                    <?php
+                                    include '../config/koneksi.php';
+                                    $query = mysqli_query($conn, "SELECT * from ulasan Order by UlasanID asc;");
+                                    ?>
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+
                                         <thead>
                                             <tr>
-                                                <th>ID Film</th>
-                                                <th>Judul</th>
-                                                <th>Link</th>
-                                                <th>Sinopsis</th>
-                                                <th>Rating</th>
-                                                <th>Tanggal rilis</th>
-                                                <th>Durasi</th>
-                                                <th>Sutradara</th>
-                                                <th>Genre</th>
-                                                <th>Kategori</th>
+                                                <th>Ulasan ID</th>
+                                                <th>Username</th>
+                                                <th>Ulasan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            </tr>
                                             <?php
-                                            include '../config/koneksi.php';
-                                            $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori from film as f join genre as g on g.GenreID=f.GenreID join kategori_umur as k on k.KategoriID=f.KategoriID ORDER BY f.FilmID asc;");
-                                            while ($film = mysqli_fetch_array($query)) {
+                                            if (mysqli_num_rows($query) > 0) {
+                                                $no = 1;
+                                                while ($data = mysqli_fetch_array($query)) {
                                             ?>
-                                                <tr>
-                                                    <td><?php echo  $film["FilmID"] ?></td>
-                                                    <td><?php echo  $film["Judul"] ?></td>
-                                                    <td><?php echo  $film["Link_Trailer"] ?></td>
-                                                    <td><?php echo  $film["Synopsis"] ?></td>
-                                                    <td><?php echo  $film["Rating"] ?></td>
-                                                    <td><?php echo  $film["Tanggal_Release"] ?></td>
-                                                    <td><?php echo  $film["Durasi_Film"] ?> min</td>
-                                                    <td><?php echo  $film["Sutradara"] ?></td>
-                                                    <td><?php echo  $film["Nama_Genre"] ?></td>
-                                                    <td><?php echo  $film["Nama_Kategori"] ?></td>
-                                                    <td>
-                                                        <a href="edit_film.php?FilmID=<?php echo $film["FilmID"] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                        <a href="#" onclick="return confirm('Delete data?')" class="btn btn-danger btn-sm">Delete</a>
-                                                    </td>
-                                                </tr>
+                                                    <tr>
+                                                        <td> <?php echo $data["UlasanID"] ?></td>
+                                                        <td> <?php echo $data["Username"] ?></td>
+                                                        <td> <?php echo $data["Ulasan_Text"] ?></td>
+                                                        <td>
+                                                            <a href="edit_ulasan.php?UlasanID=<?php echo $data["UlasanID"] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                            <a href="proses_hapus_ulasan.php?UlasanID=<?php echo $data["UlasanID"] ?>" onclick="konfirmasiHapus( . $data['UlasanID'] . )" class="btn btn-danger btn-sm">Delete</a>
+                                                        </td>
+                                                    </tr>
+                                                <?php } ?>
                                             <?php } ?>
                                         </tbody>
                                     </table>
@@ -146,7 +110,7 @@
                             </div> <!-- end card -->
                         </div><!-- end col-->
                     </div> <!-- end row-->
-                </div> <!-- content -->
+                </div> <!-- end content -->
 
                 <!-- Footer Start -->
                 <?php include "template/footer.php" ?>
@@ -154,7 +118,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 <!-- Vendor js -->
@@ -181,7 +144,33 @@
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-
-
-
 </html>
+<script>
+    function konfirmasiHapus(CastID) {
+
+        swal({
+                title: "Apakah Kamu yakin?",
+                text: "Data akan terhapus!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+            .then((willDelete) => {
+                if (willDelete) {
+                    // Redirect ke halaman Proses-hapus-data.php jika konfirmasi disetujui
+                    swal({
+                        title: "Good job!",
+                        text: "Data terhapus!",
+                        icon: "success",
+                    });
+                    setTimeout(function() {
+                        window.location.href = "proses_hapus_cast.php?CastID=" + CastID;
+                    }, 2000);
+                } else {
+                    swal("Data Batal Di hapus!", {
+                        icon: "info",
+                    });
+                }
+            });
+    }
+</script>

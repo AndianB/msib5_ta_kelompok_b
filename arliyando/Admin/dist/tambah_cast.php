@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Cast - Admin | Filmrev</title>
+    <title>Tambah Cast - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -57,65 +57,47 @@
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
                                         <li class="breadcrumb-item active">Cast</li>
+                                        <li class="breadcrumb-item active">Tambah Data Cast</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Data Cast</h4>
+                                <h4 class="page-title">Tambah Data Cast</h4>
                             </div>
                         </div>
                     </div>
                     <!-- end page title -->
 
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <a class="btn btn-primary text-light" href="tambah_cast.php"> Tambah Data </a>
+                    <div class="content">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col">
+                                    <form action="proses_tambah_cast.php" method="post" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Cast ID</label>
+                                            <input type="text" name="CastID" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan ID Cast">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleFormControlInput1" class="form-label">Nama Cast</label>
+                                            <input type="text" name="Nama_Cast" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Nama Cast">
+                                        </div>
+                                        
+                                        <div class="mb-3">
+                                            <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
+                                            <button type="submit" name="tambah" class="btn btn-success" value="simpan">Simpan</button>
+                                        </div>
+                                    </form>
                                 </div>
-                                <div class="card-body">
-                                    <?php
-                                    include '../config/koneksi.php';
-                                    $query = mysqli_query($conn, "SELECT * from list_cast;");
-                                    ?>
-                                    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
+                            </div>
+                        </div>
+                    </div>
 
-                                        <thead>
-                                            <tr>
-                                                <th>Cast ID</th>
-                                                <th>Nama Cast</th>
-                                                <th>Aksi</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            </tr>
-                                            <?php
-                                            if (mysqli_num_rows($query) > 0) {
-                                                $no = 1;
-                                                while ($data = mysqli_fetch_array($query)) {
-                                            ?>
-                                                    <tr>
-                                                        <td> <?php echo $data["CastID"] ?></td>
-                                                        <td> <?php echo $data["Nama_Cast"] ?></td>
-                                                        <td>
-                                                            <a href="edit_cast.php?CastID=<?php echo $data["CastID"] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                            <a href="proses_hapus_cast.php?CastID=<?php echo $data["CastID"] ?>" onclick="konfirmasiHapus( . $data['CastID'] . )" class="btn btn-danger btn-sm">Delete</a>
-                                                        </td>
-                                                    </tr>
-                                                <?php } ?>
-                                            <?php } ?>
-                                        </tbody>
-                                    </table>
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
-                    </div> <!-- end row-->
-                </div> <!-- end content -->
-
-                <!-- Footer Start -->
-                <?php include "template/footer.php" ?>
-                <!-- end Footer -->
+                    <!-- Footer Start -->
+                    <?php include "template/footer.php" ?>
+                    <!-- end Footer -->
+                </div>
             </div>
         </div>
     </div>
+
 </body>
 
 <!-- Vendor js -->
@@ -142,33 +124,10 @@
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-</html>
 <script>
-    function konfirmasiHapus(CastID) {
-
-        swal({
-                title: "Apakah Kamu yakin?",
-                text: "Data akan terhapus!",
-                icon: "warning",
-                buttons: true,
-                dangerMode: true,
-            })
-            .then((willDelete) => {
-                if (willDelete) {
-                    // Redirect ke halaman Proses-hapus-data.php jika konfirmasi disetujui
-                    swal({
-                        title: "Good job!",
-                        text: "Data terhapus!",
-                        icon: "success",
-                    });
-                    setTimeout(function() {
-                        window.location.href = "proses_hapus_cast.php?CastID=" + CastID;
-                    }, 2000);
-                } else {
-                    swal("Data Batal Di hapus!", {
-                        icon: "info",
-                    });
-                }
-            });
+    function save() {
+        swal('Good job!', 'data berhasil di update!', 'success');
     }
 </script>
+
+</html>
