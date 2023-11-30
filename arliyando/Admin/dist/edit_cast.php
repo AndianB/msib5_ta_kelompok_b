@@ -80,14 +80,14 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col">
-                                    <form action="proses_update_data_list_cast.php" method="post" enctype="multipart/form-data">
+                                    <form action="proses_update_data_list_cast.php?CastID=<?php echo $_GET['CastID'] ?>" method="post" enctype="multipart/form-data">
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Cast ID</label>
-                                            <input type="text" name="Cast ID" class="form-control" id="exampleFormControlInput1" placeholder="Cast ID" value="<?php echo $CastID ?>">
+                                            <input type="text" name="CastID" class="form-control" id="exampleFormControlInput1" placeholder="CastID" value="<?php echo $CastID ?>" disabled>
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Nama Cast</label>
-                                            <input type="text" name="Nama Cast" class="form-control" id="exampleFormControlInput1" placeholder="Nama Cast" value="<?php echo $Nama_Cast ?>">
+                                            <input type="text" name="Nama_Cast" class="form-control" id="exampleFormControlInput1" placeholder="Nama Cast" value="<?php echo $Nama_Cast ?>">
                                         </div>
                                         <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>
                                         <button name="tambah" type="submit" class="btn btn-success" onclick="save()">Simpan</button>
