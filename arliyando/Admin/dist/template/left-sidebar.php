@@ -47,6 +47,9 @@
                         <li>
                             <a href="data_kategoriumur.php">Kategori Umur</a>
                         </li>
+                        <li>
+                            <a href="data_kategoriumur.php">Ulasan</a>
+                        </li>
                     </ul>
                 </div>
             </li>
