@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 30 Nov 2023 pada 12.44
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.1.2
+-- Waktu pembuatan: 02 Des 2023 pada 07.45
+-- Versi server: 10.4.20-MariaDB
+-- Versi PHP: 8.0.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -124,7 +124,7 @@ CREATE TABLE `list_cast` (
 --
 
 INSERT INTO `list_cast` (`CastID`, `Nama_Cast`) VALUES
-(112, 'Reza Rahardian'),
+(112, 'Reza Rahardian '),
 (113, 'Anya Geraldine'),
 (114, 'Angga Yunanda');
 
@@ -145,8 +145,12 @@ CREATE TABLE `ulasan` (
 --
 
 INSERT INTO `ulasan` (`UlasanID`, `Username`, `Ulasan_Text`) VALUES
-(2, 'Neck Deep', 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste cum voluptatibus ducimus rem a error harum assumenda nobis eius tenetur!'),
-(5, 'Chand Parwez', 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, doloremque reiciendis. Magnam mollitia, consequuntur odit incidunt repudiandae repellat saepe quis!');
+(2, 'Deva', 'Ini keren sekali, aku tidak sabar menantikan full rilis nya nanti !'),
+(5, 'Andian', '1000/100 !!!!'),
+(7, 'liyan', 'amazing!'),
+(8, 'galang', 'aku sangat excited :)'),
+(9, 'khansa', 'WOWWWWWW o.o'),
+(10, 'jaki', 'aku tidak menyangka ini !!!!\r\n');
 
 --
 -- Indexes for dumped tables
@@ -199,7 +203,7 @@ ALTER TABLE `ulasan`
 -- AUTO_INCREMENT untuk tabel `ulasan`
 --
 ALTER TABLE `ulasan`
-  MODIFY `UlasanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `UlasanID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
