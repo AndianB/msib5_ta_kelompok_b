@@ -80,79 +80,67 @@
           <div class="col-lg-8">
             <div class="blog-post-item blog-details-wrap">
               <div class="blog-post-thumb">
-                <a href="blog-details.php"><img src="img/blog/blog_thumb01.jpg" alt="" /></a>
+                <img src="img/blog/bioskop.png" />
               </div>
               <div class="blog-post-content">
                 <div class="blog-details-top-meta">
-                  <span class="user"><i class="far fa-user"></i> by
-                    <a href="#">Admin</a></span>
-                  <span class="date"><i class="far fa-clock"></i> 10 Mar 2021</span>
+                  <span class="user"><i class="far fa-user"></i> by Admin</span>
+                  <span class="date"><i class="far fa-clock"></i> 01 December 2023</span>
                 </div>
-                <h2 class="title">Your Free Movie Streaming Purposes</h2>
+                <h2 class="title">Your Free Watch Trailer Review</h2>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a
-                  type specimen book. It has survived not only five centuies,
-                  but also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was populrised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently .
-                </p>
-                <p>
-                  Printing and typetting industry. Lorem Ipsum has been the
-                  industry's standrd dummy text ever since the, when an
-                  unknown printer took a galley of type and scrambled it to
-                  make a type specimen book. It has survived not only five
-                  centuies, but also the leap into electronic typesetting,
-                  remaining essentially unched. It was populrised in the 1960s
-                  with the release of Letraset sheets containing .
+                  Selamat datang di FilmRev, tujuan akhir Anda untuk mengintip keajaiban sinematik yang terbentang di depan!
+                  Mulailah perjalanan yang mendebarkan bersama kami saat kami mengungkap cuplikan trailer eksklusif,
+                  yang menawarkan gambaran sekilas yang menggiurkan tentang serangkaian rilis blockbuster mendatang.
+                  Di FilmRev, kami telah menyiapkan surga digital tempat keajaiban bercerita menjadi hidup melalui sudut pandang beragam genre dan narasi yang menawan.
+                  Trailer kami yang dibuat dengan cermat berfungsi sebagai pintu gerbang ke dunia sinematik, menggoda indra Anda dan membuat Anda tidak sabar menantikan petualangan layar lebar berikutnya.
+                  Baik Anda penggemar aksi yang menggetarkan hati, ketegangan yang menegangkan, atau drama yang mengharukan, FilmRev siap membantu Anda.
+                  Bergabunglah bersama kami saat kami menghidupkan kegembiraan atas film-film terbaru yang akan tayang di bioskop, menyediakan platform dinamis di mana para penggemar film dapat membenamkan diri dalam seni dan inovasi penceritaan kontemporer.
+                  Bersiaplah untuk terpikat, terkejut, dan dibawa ke dunia di luar imajinasi—semuanya dalam dunia FilmRev yang dinamis.
                 </p>
                 <blockquote>
                   <i class="fas fa-quote-right"></i>
                   <p>
-                    Watch Mobflx movies & TV shows online or stream rights to
-                    your smart TV, game console, PC, mobile more.
+                    Watch film trailer events online and directly via the filmrev platform
                   </p>
-                  <figure><span>Frenk Smith</span> Founder ceo</figure>
+                  <figure><span>Andian</span> Founder ceo</figure>
                 </blockquote>
                 <div class="blog-img-wrap">
                   <div class="row">
                     <div class="col-sm-6">
-                      <img src="img/blog/blog_details_img01.jpg" alt="" />
+                      <img src="img/blog/film-roll.jpg" alt="" />
                     </div>
                     <div class="col-sm-6">
-                      <img src="img/blog/blog_details_img02.jpg" alt="" />
+                      <img src="img/blog/gambar.jpg" alt="" />
                     </div>
                   </div>
                 </div>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a
-                  type specimen book. It has survived not only five centuies.
+                  FilmRev, kami tidak hanya menyajikan trailer-trailer eksklusif, tetapi juga memberikan wawasan mendalam dan ulasan yang informatif.
+                  Berkelilinglah melalui halaman-halaman kami untuk menemukan cuplikan film terpanas yang akan segera rilis, merasakan getaran euforia dari teaser-teaser yang baru dirilis,
+                  dan menjelajahi dunia magis dari produksi sinematik terkini
                 </p>
                 <p>
-                  Printing and typetting industry. Lorem Ipsum has been the
-                  industry's standrd dummy text ever since the, when an
-                  unknown printer took a galley of type and scrambled it to
-                  make a type specimen book. It has survived not only five
-                  centuies, but also the leap into electronic typesetting,
-                  remaining essentially unched. It was populrised in the 1960s
-                  with the release of Letraset sheets containing .
+                  Dengan antarmuka yang ramah pengguna, FilmRev didesain untuk memastikan pengalaman penonton yang tak tertandingi.
+                  Jadilah yang pertama melihat trailer-trailer paling mutakhir, saksikan bintang-bintang papan atas dalam aksi, dan rasakan kegembiraan menunggu film-film yang akan datang.
+                  Kami bukan hanya situs tentang film, tapi tentang perjalanan emosional yang film-film bawa kepada kita.
+                </p>
+                <p>
+                  Mari bergabung dalam komunitas FilmRev, tempat di mana kita semua dapat berbagi kecintaan kita terhadap dunia sinematik.
+                  Jangan lewatkan satu momen pun dari perjalanan seru ini.
+                  Temukan trailer-trailer terbaru, baca ulasan kami, dan bergabunglah dalam diskusi dengan sesama penggemar film di seluruh dunia.
+                  Bersama-sama, mari kita rayakan keindahan dunia film hanya di FilmRev!
                 </p>
                 <div class="blog-post-meta">
                   <div class="blog-post-share">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://web.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                    <a href="https://id.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="avatar-post mt-40 mb-80">
+            <!-- <div class="avatar-post mt-40 mb-80">
               <div class="post-avatar-img">
                 <img src="img/blog/post_avatar_img.png" alt="img" />
               </div>
@@ -175,8 +163,8 @@
                   </li>
                 </ul>
               </div>
-            </div>
-            <div class="blog-comment mb-80">
+            </div> -->
+            <!-- <div class="blog-comment mb-80">
               <div class="widget-title mb-45">
                 <h5 class="title">Comments</h5>
               </div>
@@ -201,30 +189,73 @@
                     </div>
                   </div>
                 </li>
-              
+
               </ul>
-            </div>
+            </div> -->
+            <?php
+            $conn = mysqli_connect("127.0.0.1", "root", "", "db_film");
+
+            if (!$conn) {
+              die("Connection failed: " . mysqli_connect_error());
+            }
+
+            $sql = "SELECT * FROM ulasan";
+            $result = mysqli_query($conn, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+              echo '<div class="blog-comment mb-80">';
+              echo '<div class="widget-title mb-45">';
+              echo '<h5 class="title">Comments</h5>';
+              echo '</div>';
+              echo '<ul>';
+
+              while ($row = mysqli_fetch_assoc($result)) {
+                echo '<li>';
+                echo '<div class="single-comment">';
+                echo '<div class="comment-avatar-img">';
+                echo '<img src="img/blog/comment_avatar01.jpg" alt="img" />';
+                echo '</div>';
+                echo '<div class="comment-text">';
+                echo '<div class="comment-avatar-info">';
+                echo '<h5>' . $row["Username"] . '<span class="comment-date">';
+                echo '</div>';
+                echo '<p>' . $row["Ulasan_Text"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+                echo '</li>';
+              }
+
+              echo '</ul>';
+              echo '</div>';
+            } else {
+              echo '<div class="blog-comment mb-80">';
+              echo '<div class="widget-title mb-45">';
+              echo '<h5 class="title">Comments</h5>';
+              echo '</div>';
+              echo '<p>No reviews available.</p>';
+              echo '</div>';
+            }
+
+            mysqli_close($conn);
+            ?>
             <div class="contact-form-wrap">
               <div class="widget-title mb-50">
                 <h5 class="title">Post a Comment</h5>
               </div>
               <div class="contact-form">
-                <form action="#">
+                <form action="proses_comment.php" method="post">
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="text" placeholder="You Name *" />
-                    </div>
-                    <div class="col-md-6">
-                      <input type="email" placeholder="You  Email *" />
+                      <input type="text" name="Username" placeholder="You Name *" required />
                     </div>
                   </div>
-                  <input type="text" placeholder="Subject *" />
-                  <textarea name="message" placeholder="Type Your Message..."></textarea>
-                  <button class="btn">Send Message</button>
+                  <textarea name="Ulasan_Text" placeholder="Type Your Message..."></textarea>
+                  <button type="submit" class="btn" name="submit_review">Send Message</button>
                 </form>
               </div>
             </div>
           </div>
+
           <!-- <div class="col-lg-4">
             <aside class="blog-sidebar">
               <div class="widget blog-widget">
