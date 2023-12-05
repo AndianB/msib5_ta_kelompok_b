@@ -113,118 +113,68 @@
         </div>
         <div class="tab-content" id="myTabContent">
           <div class="tab-pane fade show active" id="tvShow" role="tabpanel" aria-labelledby="tvShow-tab">
-            <div class="ucm-active owl-carousel">
-              <div class="movie-item mb-50">
-                <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/poster/ucm_poster01.jpg" alt="" /></a>
-                </div>
-                <div class="movie-content">
-                  <div class="top">
-                    <h5 class="title">
-                      <a href="movie-details.php">Women's Day</a>
-                    </h5>
-                    <span class="date">2021</span>
-                  </div>
-                  <div class="bottom">
-                    <ul>
-                      <li><span class="quality">hd</span></li>
-                      <li>
-                        <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                        <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="movie-item mb-50">
-                <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/poster/ucm_poster02.jpg" alt="" /></a>
-                </div>
-                <div class="movie-content">
-                  <div class="top">
-                    <h5 class="title">
-                      <a href="movie-details.php">The Perfect Match</a>
-                    </h5>
-                    <span class="date">2021</span>
-                  </div>
-                  <div class="bottom">
-                    <ul>
-                      <li><span class="quality">4k</span></li>
-                      <li>
-                        <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                        <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="movie-item mb-50">
-                <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/poster/ucm_poster03.jpg" alt="" /></a>
-                </div>
-                <div class="movie-content">
-                  <div class="top">
-                    <h5 class="title">
-                      <a href="movie-details.php">The Dog Woof</a>
-                    </h5>
-                    <span class="date">2021</span>
-                  </div>
-                  <div class="bottom">
-                    <ul>
-                      <li><span class="quality">hd</span></li>
-                      <li>
-                        <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                        <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="movie-item mb-50">
-                <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/poster/ucm_poster04.jpg" alt="" /></a>
-                </div>
-                <div class="movie-content">
-                  <div class="top">
-                    <h5 class="title">
-                      <a href="movie-details.php">The Easy Reach</a>
-                    </h5>
-                    <span class="date">2021</span>
-                  </div>
-                  <div class="bottom">
-                    <ul>
-                      <li><span class="quality">8k</span></li>
-                      <li>
-                        <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                        <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="movie-item mb-50">
-                <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/poster/ucm_poster05.jpg" alt="" /></a>
-                </div>
-                <div class="movie-content">
-                  <div class="top">
-                    <h5 class="title">
-                      <a href="movie-details.php">The Cooking</a>
-                    </h5>
-                    <span class="date">2021</span>
-                  </div>
-                  <div class="bottom">
-                    <ul>
-                      <li><span class="quality">hd</span></li>
-                      <li>
-                        <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                        <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <?php
+            // Database connection details
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "db_film";
+
+            // Create connection
+            $conn = new mysqli($servername, $username, $password, $dbname);
+
+            // Check connection
+            if ($conn->connect_error) {
+              die("Connection failed: " . $conn->connect_error);
+            }
+
+            // Fetch movie data from the database
+            $query = "SELECT * FROM film";
+            $result = $conn->query($query);
+
+            // Check for errors
+            if (!$result) {
+              die("Database query failed: " . $conn->error);
+            }
+
+            // Loop through the movie records and generate HTML for each movie item
+            echo '<div class="ucm-active owl-carousel">';
+            while ($row = $result->fetch_assoc()) {
+              $filmID = $row['FilmID'];
+              $judul = $row['Judul'];
+              $gambar = $row['Gambar'];
+              $tanggalRelease = $row['Tanggal_Release'];
+              $durasiFilm = $row['Durasi_Film'];
+              $rating = $row['Rating'];
+
+              // Output HTML for each movie item
+              echo '<div class="movie-item mb-50">';
+              echo '<div class="movie-poster">';
+              echo '<a href="movie-details.php?filmID=' . $filmID . '"><img src="../public/img/' . $gambar . '" alt="' . $judul . '" /></a>';
+              echo '</div>';
+              echo '<div class="movie-content">';
+              echo '<div class="top">';
+              echo '<h5 class="title"><a href="movie-details.php?filmID=' . $filmID . '">' . $judul . '</a></h5>';
+              echo '<span class="date">' . $tanggalRelease . '</span>';
+              echo '</div>';
+              echo '<div class="bottom">';
+              echo '<ul>';
+              echo '<li><span class="quality">hd</span></li>';
+              echo '<li>';
+              echo '<span class="duration"><i class="far fa-clock"></i> ' . $durasiFilm . ' min</span>';
+              echo '<span class="rating"><i class="fas fa-thumbs-up"></i> ' . $rating . '</span>';
+              echo '</li>';
+              echo '</ul>';
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
+            }
+            echo '</div>';
+
+            // Close the database connection
+            $conn->close();
+            ?>
+
           </div>
           <div class="tab-pane fade" id="movies" role="tabpanel" aria-labelledby="movies-tab">
             <div class="ucm-active owl-carousel">

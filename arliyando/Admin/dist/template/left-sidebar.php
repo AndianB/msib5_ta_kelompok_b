@@ -50,6 +50,9 @@
                         <li>
                             <a href="data_ulasan.php">Ulasan</a>
                         </li>
+                        <li>
+                            <a href="data_kontak.php">Kontak</a>
+                        </li>
                     </ul>
                 </div>
             </li>
