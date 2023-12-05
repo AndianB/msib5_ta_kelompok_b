@@ -213,7 +213,7 @@
                 echo '<li>';
                 echo '<div class="single-comment">';
                 echo '<div class="comment-avatar-img">';
-                echo '<img src="img/blog/comment_avatar01.jpg" alt="img" />';
+                echo '<img src="img/blog/ava.jpg" alt="img" />';
                 echo '</div>';
                 echo '<div class="comment-text">';
                 echo '<div class="comment-avatar-info">';

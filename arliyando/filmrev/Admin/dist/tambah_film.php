@@ -123,7 +123,9 @@
                                             <!-- <input type="text" name="Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Kategori"> -->
                                             <select class="form-control" id="Kategori" name="Kategori" required>
                                                 <option value="" disabled selected hidden>Pilih Kategori</option>
+                                                <option value="10">Anak-Anak</option>
                                                 <option value="13">Remaja</option>
+                                                <option value="18">Dewasa</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">

@@ -1,7 +1,7 @@
 <div class="leftside-menu">
 
     <!-- Brand Logo Light -->
-    <a href="tables-datatable.php" class="logo logo-light">
+    <a href="index.php" class="logo logo-light">
         <span class="logo-lg">
             <img src="assets/images/favicon.png" alt="logo">
         </span>
@@ -11,7 +11,7 @@
     </a>
 
     <!-- Brand Logo Dark -->
-    <a href="tables-datatable.php" class="logo logo-dark">
+    <a href="index.php" class="logo logo-dark">
         <span class="logo-lg">
             <img src="assets/images/favicon.png" alt="dark logo">
         </span>
@@ -36,7 +36,7 @@
                             <a href="index.php">Data Tables</a>
                         </li> -->
                         <li>
-                            <a href="data_film.php">Film</a>
+                            <a href="index.php">Film</a>
                         </li>
                         <li>
                             <a href="data_cast.php">Cast</a>
