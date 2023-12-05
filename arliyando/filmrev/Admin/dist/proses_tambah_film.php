@@ -1,7 +1,7 @@
 <?php
 include '../config/koneksi.php';
 
-$target_dir = "assets/images/uploads/";
+$target_dir = "posters/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
@@ -9,7 +9,7 @@ $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
 // Menyalin file ke lokasi kedua
-$second_target_dir = "../../filmrev/public/img/posters/";
+$second_target_dir = "../../public/img/posters/";
 $second_target_file = $second_target_dir . basename($_FILES["image"]["name"]);
 copy($target_file, $second_target_file);
 
