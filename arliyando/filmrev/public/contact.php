@@ -83,18 +83,18 @@
                 <h5 class="title">Contact Form</h5>
               </div>
               <div class="contact-form">
-                <form action="#">
+                <form action="proses_kontak.php" method="post">
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="text" placeholder="You Name *" />
+                      <input type="text" name="name" placeholder="You Name *" />
                     </div>
                     <div class="col-md-6">
-                      <input type="email" placeholder="You  Email *" />
+                      <input type="email" name="email" placeholder="You  Email *" />
                     </div>
                   </div>
-                  <input type="text" placeholder="Subject *" />
+                  <input type="text" name="subject" placeholder="Subject *" />
                   <textarea name="message" placeholder="Type Your Message..."></textarea>
-                  <button class="btn">Send Message</button>
+                  <button type="submit" class="btn">Send Message</button>
                 </form>
               </div>
             </div>
@@ -114,11 +114,11 @@
                     <div class="icon">
                       <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <p><span>Address :</span> W38 Park Road New York</p>
+                    <p><span>Address :</span> J69 Pejuang Jakarta</p>
                   </li>
                   <li>
                     <div class="icon"><i class="fas fa-phone-alt"></i></div>
-                    <p><span>Phone :</span> (09) 123 854 365</p>
+                    <p><span>Phone :</span> (08) 123 456 789</p>
                   </li>
                   <li>
                     <div class="icon"><i class="fas fa-envelope"></i></div>
