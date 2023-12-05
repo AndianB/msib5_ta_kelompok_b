@@ -20,4 +20,4 @@ $kategori = $_POST["Kategori"];
 
 $result = mysqli_query($conn, "UPDATE `film` set `Judul` = '$judul', `Gambar`='$gambar', `Link_Trailer`='$link', `Synopsis`='$sinopsis', `Rating`='$rating', `Tanggal_Release`='$tgl_rilis', `Durasi_Film`='$durasi', `Sutradara`='$sutradara', `GenreID`='$genre', `KategoriID`='$kategori' where `FilmID` = '$_GET[FilmID]'");
 
-header("Location:data_film.php");
+header("Location:index.php");

@@ -27,5 +27,4 @@ $kategori = $_POST["Kategori"];
 
 $result = mysqli_query($conn, "INSERT INTO `film` (`FilmID`, `Judul`, `Gambar`, `Link_Trailer`, `Synopsis`, `Rating`, `Tanggal_Release`, `Durasi_Film`, `Sutradara`, `GenreID`, `KategoriID`) VALUES ('$filmid', '$judul', '$gambar', '$link', '$sinopsis', '$rating', '$tgl_rilis', '$durasi', '$sutradara', '$genre', '$kategori');");
 
-header("Location:data_film.php");
-?>
+header("Location:index.php");
