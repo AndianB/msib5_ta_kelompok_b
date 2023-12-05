@@ -114,29 +114,31 @@
                                                 <th>Sutradara</th>
                                                 <th>Genre</th>
                                                 <th>Kategori</th>
+                                                <th>Gambar</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
                                             include '../config/koneksi.php';
-                                            $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori from film as f join genre as g on g.GenreID=f.GenreID join kategori_umur as k on k.KategoriID=f.KategoriID ORDER BY f.FilmID asc;");
+                                            $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.FilmID ASC;");
                                             while ($film = mysqli_fetch_array($query)) {
                                             ?>
                                                 <tr>
-                                                    <td><?php echo  $film["FilmID"] ?></td>
-                                                    <td><?php echo  $film["Judul"] ?></td>
-                                                    <td><?php echo  $film["Link_Trailer"] ?></td>
-                                                    <td><?php echo  $film["Synopsis"] ?></td>
-                                                    <td><?php echo  $film["Rating"] ?></td>
-                                                    <td><?php echo  $film["Tanggal_Release"] ?></td>
-                                                    <td><?php echo  $film["Durasi_Film"] ?> min</td>
-                                                    <td><?php echo  $film["Sutradara"] ?></td>
-                                                    <td><?php echo  $film["Nama_Genre"] ?></td>
-                                                    <td><?php echo  $film["Nama_Kategori"] ?></td>
+                                                    <td><?php echo $film["FilmID"] ?></td>
+                                                    <td><?php echo $film["Judul"] ?></td>
+                                                    <td><?php echo $film["Link_Trailer"] ?></td>
+                                                    <td><?php echo $film["Synopsis"] ?></td>
+                                                    <td><?php echo $film["Rating"] ?></td>
+                                                    <td><?php echo $film["Tanggal_Release"] ?></td>
+                                                    <td><?php echo $film["Durasi_Film"] ?> min</td>
+                                                    <td><?php echo $film["Sutradara"] ?></td>
+                                                    <td><?php echo $film["Nama_Genre"] ?></td>
+                                                    <td><?php echo $film["Nama_Kategori"] ?></td>
+                                                    <td><img src="<?php echo $film["Gambar"] ?>" alt="Film Poster" style="max-width: 100px; max-height: 150px;"></td>
                                                     <td>
                                                         <a href="edit_film.php?FilmID=<?php echo $film["FilmID"] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                        <a href="proses_hapus_film.php?FilmID=<?php echo $film["FilmID"] ?>" onclick="konfirmasiHapus( . $data['FilmID'] . )" class="btn btn-danger btn-sm">Delete</a>
+                                                        <a href="proses_hapus_film.php?FilmID=<?php echo $film["FilmID"] ?>" onclick="konfirmasiHapus(<?php echo $film['FilmID'] ?>)" class="btn btn-danger btn-sm">Delete</a>
                                                     </td>
                                                 </tr>
                                             <?php } ?>

@@ -93,271 +93,80 @@
           </div>
         </div>
         <div class="row tr-movie-active">
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster01.jpg" alt="" />
-                <ul class="overlay-btn">
-                  
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">Women's Day</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster02.jpg" alt="" />
-                <ul class="overlay-btn">
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Perfect Match</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">4k</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster03.jpg" alt="" />
-                <ul class="overlay-btn">
+          <?php
+          // Assuming you have a database connection established
+          $host = "localhost";  // Change to your database host
+          $database = "db_film";  // Change to your database name
+          $username = "root";  // Change to your database username
+          $password = "";  // Empty password for this example
 
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Dog Woof</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster04.jpg" alt="" />
-                <ul class="overlay-btn">
+          // Create a database connection
+          $connection = mysqli_connect($host, $username, $password, $database);
 
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Easy Reach</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster05.jpg" alt="" />
-                <ul class="overlay-btn">
+          // Check the connection
+          if (!$connection) {
+            die("Connection failed: " . mysqli_connect_error());
+          }
 
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Cooking</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one cat-two">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster06.jpg" alt="" />
-                <ul class="overlay-btn">
+          // Fetch movie data from the database
+          $query = "SELECT FilmID, Judul, Gambar, Link_Trailer, Tanggal_Release, Durasi_Film, Rating FROM film";
+          $result = mysqli_query($connection, $query);
 
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Hikaru Night</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster07.jpg" alt="" />
-                <ul class="overlay-btn">
+          // Check if the query was successful
+          if ($result) {
+            while ($movieData = mysqli_fetch_assoc($result)) {
+          ?>
 
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Life Quotes</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one cat-two">
-            <div class="movie-item movie-item-three mb-50">
-              <div class="movie-poster">
-                <img src="img/poster/ucm_poster08.jpg" alt="" />
-                <ul class="overlay-btn">
-                
-                  <li>
-                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video btn">Watch Now</a>
-                  </li>
-                  <li>
-                    <a href="movie-details.php" class="btn">Details</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title">
-                    <a href="movie-details.php">The Beachball</a>
-                  </h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
+              <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
+                <div class="movie-item movie-item-three mb-50">
+                  <div class="movie-poster">
+                    <img src="../public/img/<?php echo $movieData['Gambar']; ?>"  alt="Main Image" onerror="this.onerror=null; this.src='../public/img/posters/ucm_poster01.jpg';"/>
+                    <!-- Note Dari Galang : ukuran 303x430-->
+                    <ul class="overlay-btn">
+                      <li>
+                        <a href="<?php echo $movieData['Link_Trailer']; ?>" class="popup-video btn">Watch Now</a>
+                      </li>
+                      <li>
+                        <a href="movie-details.php?film_id=<?php echo $movieData['FilmID']; ?>" class="btn">Details</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="movie-content">
+                    <div class="top">
+                      <h5 class="title">
+                        <a href="movie-details.php?film_id=<?php echo $movieData['FilmID']; ?>"><?php echo $movieData['Judul']; ?></a>
+                      </h5>
+                      <span class="date"><?php echo $movieData['Tanggal_Release']; ?></span>
+                    </div>
+                    <div class="bottom">
+                      <ul>
+                        <li><span class="quality">hd</span></li>
+                        <li>
+                          <span class="duration"><i class="far fa-clock"></i> <?php echo $movieData['Durasi_Film']; ?> min</span>
+                          <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $movieData['Rating']; ?></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
+
+          <?php
+            }
+
+            // Release the result set
+            mysqli_free_result($result);
+          } else {
+            // Handle the case where the query failed
+            echo "Error: " . mysqli_error($connection);
+          }
+
+          // Close the database connection
+          mysqli_close($connection);
+          ?>
+
         </div>
-        
+
       </div>
     </section>
     <!-- movie-area-end -->
