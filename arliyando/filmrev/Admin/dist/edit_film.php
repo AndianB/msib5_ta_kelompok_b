@@ -98,8 +98,8 @@
                                             <input type="text" name="Judul" class="form-control" id="exampleFormControlInput1" placeholder="Masukkan Judul" value="<?php echo $Judul ?>">
                                         </div>
                                         <div class="form-group mb-3">
-                                            <label class="form-label" for="image">Gambar</label>
-                                            <img src="assets/images/uploads/<?php echo $f['Gambar'] ?>" width="100px">
+                                            <label class="form-label" for="image">Gambar</label> <br>
+                                            <img src="../../public/img/posters/<?php echo $Gambar ?>" width="100px">
                                             <input type="file" class="form-control mt-2" id="image" name="image" value="<?php echo $Gambar ?>">
                                         </div>
                                         <div class=" mb-3">
@@ -133,8 +133,16 @@
                                             <select class="form-control" id="genre" name="Genre" required>
                                                 <option value="" disabled selected hidden><?php $Genre ?></option>
                                                 <option value="1" <?php if ($Genre == '1') echo 'selected'; ?>>Horror</option>
-                                                <option value="1" <?php if ($Genre == '2') echo 'selected'; ?>>Romance</option>
-                                                <option value="1" <?php if ($Genre == '3') echo 'selected'; ?>>Thriler</option>
+                                                <option value="2" <?php if ($Genre == '2') echo 'selected'; ?>>Romance</option>
+                                                <option value="3" <?php if ($Genre == '3') echo 'selected'; ?>>Thriler</option>
+                                                <option value="4" <?php if ($Genre == '4') echo 'selected'; ?>>Comedy</option>
+                                                <option value="5" <?php if ($Genre == '5') echo 'selected'; ?>>Action</option>
+                                                <option value="6" <?php if ($Genre == '6') echo 'selected'; ?>>Adventure</option>
+                                                <option value="7" <?php if ($Genre == '7') echo 'selected'; ?>>Drama</option>
+                                                <option value="8" <?php if ($Genre == '8') echo 'selected'; ?>>Science Fiction</option>
+                                                <option value="9" <?php if ($Genre == '9') echo 'selected'; ?>>Fantasy</option>
+                                                <option value="10" <?php if ($Genre == '10') echo 'selected'; ?>>Historical</option>
+                                                <option value="11" <?php if ($Genre == '11') echo 'selected'; ?>>Crime</option>
                                             </select>
                                         </div>
                                         <div class=" mb-4">
@@ -142,7 +150,9 @@
                                             <!-- <input type="text" name="Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Kategori"> -->
                                             <select class="form-control" id="Kategori" name="Kategori" required>
                                                 <option value="" disabled selected hidden><?php $Kategori ?> </option>
-                                                <option value="13" <?php if ($Kategori == '13') echo 'selected';?>>Remaja</option>
+                                                <option value="10" <?php if ($Kategori == '10') echo 'selected';?>>R-13</option>
+                                                <option value="13" <?php if ($Kategori == '13') echo 'selected';?>>R-17+</option>
+                                                <option value="18" <?php if ($Kategori == '18') echo 'selected';?>>R-21+</option>
                                             </select>
                                         </div>
                                         <button type="button" name="tutup" class="btn btn-secondary me-2" onclick="history.back();">Tutup</button>

@@ -24,7 +24,10 @@
   <link rel="stylesheet" href="css/default.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-</head>
+</head> 
+
+<!-- Connection -->
+<?php include '../Admin/config/koneksi.php' ?>
 
 <body>
   <!-- preloader -->
@@ -49,8 +52,13 @@
 
   <!-- main-area -->
   <main>
+  
     <!-- banner-area -->
     <section class="banner-area banner-bg" data-background="img/banner/banner_bg01.jpg">
+      <?php
+      $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.FilmID ASC limit 1;");
+      while ($banner = mysqli_fetch_array($query)) {
+      ?>
       <div class="container custom-container">
         <div class="row">
           <div class="col-xl-8 col-lg-10">
@@ -64,23 +72,23 @@
               <div class="banner-meta wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.8s">
                 <ul>
                   <li class="quality">
-                    <span>hd</span>
+                    <span><?php echo $banner["Nama_Kategori"]?></span>
                   </li>
                   <li class="category">
-                    <a href="#">Romance,</a>
-                    <a href="#">Drama</a>
+                    <a href="#"><?php echo $banner["Nama_Genre"] ?></a>
                   </li>
                   <li class="release-time">
-                    <span><i class="far fa-calendar-alt"></i> 2021</span>
-                    <span><i class="far fa-clock"></i> 128 min</span>
+                    <span><i class="far fa-calendar-alt"></i><?php echo date("Y",strtotime($banner["Tanggal_Release"])); ?></span>
+                    <span><i class="far fa-clock"></i><?php echo $banner["Durasi_Film"] ?> min</span>
                   </li>
                 </ul>
               </div>
-              <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="banner-btn btn popup-video wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.8s"><i class="fas fa-play"></i> Watch Now</a>
+              <a href="<?php echo $banner["Link_Trailer"]?>" class="banner-btn btn popup-video wow fadeInUp" data-wow-delay=".8s" data-wow-duration="1.8s"><i class="fas fa-play"></i> Watch Now</a>
             </div>
           </div>
         </div>
       </div>
+      <?php } ?>
     </section>
     <!-- banner-area-end -->
 
@@ -91,7 +99,7 @@
         <div class="row align-items-end mb-55">
           <div class="col-lg-6">
             <div class="section-title text-center text-lg-left">
-              <span class="sub-title">ONLINE STREAMING</span>
+              <span class="sub-title">movie</span>
               <h2 class="title">Recommended Movies</h2>
             </div>
           </div>
@@ -99,7 +107,7 @@
             <div class="ucm-nav-wrap">
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <a class="nav-link active" id="tvShow-tab" data-toggle="tab" href="#tvShow" role="tab" aria-controls="tvShow" aria-selected="true">Action</a>
+                  <a class="nav-link active" id="tvShow-tab" data-toggle="tab" href="#tvshow" role="tab" aria-controls="tvshow" aria-selected="true">Action</a>
                 </li>
                 <li class="nav-item" role="presentation">
                   <a class="nav-link" id="movies-tab" data-toggle="tab" href="#movies" role="tab" aria-controls="movies" aria-selected="false">Horror</a>
@@ -150,7 +158,7 @@
               // Output HTML for each movie item
               echo '<div class="movie-item mb-50">';
               echo '<div class="movie-poster">';
-              echo '<a href="movie-details.php?filmID=' . $filmID . '"><img src="../public/img/' . $gambar . '" alt="' . $judul . '" /></a>';
+              echo '<a href="movie-details.php?filmID=' . $filmID . '"><img src="img/posters/' . $gambar . '" alt="' . $judul . '" /></a>';
               echo '</div>';
               echo '<div class="movie-content">';
               echo '<div class="top">';

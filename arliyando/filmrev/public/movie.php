@@ -120,7 +120,7 @@
               <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
                 <div class="movie-item movie-item-three mb-50">
                   <div class="movie-poster">
-                    <img src="../public/img/<?php echo $movieData['Gambar']; ?>"  alt="Main Image" onerror="this.onerror=null; this.src='../public/img/posters/ucm_poster01.jpg';"/>
+                    <img src="img/posters/<?php echo $movieData['Gambar']; ?>" alt="Main Image" onerror="this.onerror=null; this.src='../public/img/posters/ucm_poster01.jpg';" />
                     <!-- Note Dari Galang : ukuran 303x430-->
                     <ul class="overlay-btn">
                       <li>

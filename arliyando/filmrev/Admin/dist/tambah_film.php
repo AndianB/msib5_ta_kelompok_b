@@ -116,6 +116,14 @@
                                                 <option value="1">Horror</option>
                                                 <option value="2">Romance</option>
                                                 <option value="3">Thriler</option>
+                                                <option value="4">Comedy</option>
+                                                <option value="5">Action</option>
+                                                <option value="6">Adventure</option>
+                                                <option value="7">Drama</option>
+                                                <option value="8">Science Fiction</option>
+                                                <option value="9">Fantasy</option>
+                                                <option value="10">Historical</option>
+                                                <option value="11">Crime</option>
                                             </select>
                                         </div>
                                         <div class=" mb-4">
@@ -123,9 +131,9 @@
                                             <!-- <input type="text" name="Kategori" class="form-control" id="exampleFormControlInput1" placeholder="Pilih Kategori"> -->
                                             <select class="form-control" id="Kategori" name="Kategori" required>
                                                 <option value="" disabled selected hidden>Pilih Kategori</option>
-                                                <option value="10">Anak-Anak</option>
-                                                <option value="13">Remaja</option>
-                                                <option value="18">Dewasa</option>
+                                                <option value="10">R-13</option>
+                                                <option value="13">R-17+</option>
+                                                <option value="18">R-21+</option>
                                             </select>
                                         </div>
                                         <div class="mb-3">

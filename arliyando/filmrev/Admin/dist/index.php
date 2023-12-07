@@ -26,7 +26,7 @@
     <!-- Icons css -->
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
 </head>
-<script>
+<!-- <script>
     function konfirmasiHapus(GenreID) {
 
         swal({
@@ -54,32 +54,22 @@
                 }
             });
     }
-</script>
+</script> -->
 
 <body>
-    <!-- Begin page -->
     <div class="wrapper">
-        <!-- ========== Topbar Start ========== -->
-        <?php include "template/top-bar.php" ?>
-        <!-- ========== Topbar End ========== -->
+        <?php include "template/top-bar.php" ?> <!-- ========== Topbar ========== -->
 
-        <!-- ========== Left Sidebar Start ========== -->
-        <?php include "template/left-sidebar.php" ?>
-        <!-- ========== Left Sidebar End ========== -->
+        <?php include "template/left-sidebar.php" ?> <!-- ========== Left Sidebar ========== -->
 
-        <!-- ============================================================== -->
         <!-- Start Page Content here -->
-        <!-- ============================================================== -->
-
         <div class="content-page">
-            <div class="content">
 
-                <!-- Start Content-->
+            <!-- Content Header -->
+            <section class="content-header">
                 <div class="container-fluid">
-
-                    <!-- start page title -->
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-sm-12">
                             <div class="page-title-box">
                                 <div class="page-title-right">
                                     <ol class="breadcrumb m-0">
@@ -92,14 +82,19 @@
                             </div>
                         </div>
                     </div>
-                    <!-- end page title -->
+                </div>
+            </section>
 
+            <!-- Main Content -->
+            <section class="content">
+                <div class="container-fluid">
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
                                     <a class="btn btn-primary text-light" href="tambah_film.php"> Tambah Data </a>
                                 </div>
+
                                 <div class="card-body">
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                                         <thead>
@@ -107,7 +102,7 @@
                                                 <th>ID Film</th>
                                                 <th>Judul</th>
                                                 <th>Link</th>
-                                                <th>Sinopsis</th>
+                                                <!-- <th>Sinopsis</th> -->
                                                 <th>Rating</th>
                                                 <th>Tanggal rilis</th>
                                                 <th>Durasi</th>
@@ -127,15 +122,15 @@
                                                 <tr>
                                                     <td><?php echo $film["FilmID"] ?></td>
                                                     <td><?php echo $film["Judul"] ?></td>
-                                                    <td><?php echo $film["Link_Trailer"] ?></td>
-                                                    <td><?php echo $film["Synopsis"] ?></td>
+                                                    <td><a href="<?php echo $film["Link_Trailer"] ?>">Link</a></td>
+                                                    <!-- <td><?php echo $film["Synopsis"] ?></td> -->
                                                     <td><?php echo $film["Rating"] ?></td>
                                                     <td><?php echo $film["Tanggal_Release"] ?></td>
                                                     <td><?php echo $film["Durasi_Film"] ?> min</td>
                                                     <td><?php echo $film["Sutradara"] ?></td>
                                                     <td><?php echo $film["Nama_Genre"] ?></td>
                                                     <td><?php echo $film["Nama_Kategori"] ?></td>
-                                                    <td><img src="<?php echo $film["Gambar"] ?>" alt="Film Poster" style="max-width: 100px; max-height: 150px;"></td>
+                                                    <td><img src="../../public/img/posters/<?php echo $film["Gambar"] ?>" alt="Film Poster" style="max-width: 100px; max-height: 150px;"></td>
                                                     <td>
                                                         <a href="edit_film.php?FilmID=<?php echo $film["FilmID"] ?>" class="btn btn-warning btn-sm">Edit</a>
                                                         <a href="proses_hapus_film.php?FilmID=<?php echo $film["FilmID"] ?>" onclick="konfirmasiHapus(<?php echo $film['FilmID'] ?>)" class="btn btn-danger btn-sm">Delete</a>
@@ -148,15 +143,16 @@
                             </div> <!-- end card -->
                         </div><!-- end col-->
                     </div> <!-- end row-->
-                </div> <!-- content -->
+                </div>
+            </section>
+        </div> <!-- content -->
 
-                <!-- Footer Start -->
-                <?php include "template/footer.php" ?>
-                <!-- end Footer -->
-            </div>
-        </div>
+        <!-- Footer Start -->
+        <?php include "template/footer.php" ?>
+        <!-- end Footer -->
     </div>
-
+    </div>
+    </div>
 </body>
 
 <!-- Vendor js -->

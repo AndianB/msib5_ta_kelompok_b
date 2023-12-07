@@ -1,17 +1,17 @@
 <?php
 include '../config/koneksi.php';
 
-$target_dir = "posters/";
+$target_dir = "../../public/img/posters/";
 $target_file = $target_dir . basename($_FILES["image"]["name"]);
 $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
 // Pindahkan file pertama ke lokasi pertama
 move_uploaded_file($_FILES["image"]["tmp_name"], $target_file);
 
-// Menyalin file ke lokasi kedua
-$second_target_dir = "../../public/img/posters/";
-$second_target_file = $second_target_dir . basename($_FILES["image"]["name"]);
-copy($target_file, $second_target_file);
+// // Menyalin file ke lokasi kedua
+// $second_target_dir = "../../public/img/posters/";
+// $second_target_file = $second_target_dir . basename($_FILES["image"]["name"]);
+// copy($target_file, $second_target_file);
 
 $filmid = $_POST["FilmID"];
 $judul = $_POST["Judul"];
