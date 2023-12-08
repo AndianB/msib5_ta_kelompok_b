@@ -50,7 +50,7 @@
   <!-- main-area -->
   <main>
     <!-- breadcrumb-area -->
-    <section class="breadcrumb-area breadcrumb-bg" data-background="img/bg/breadcrumb_bg.jpg">
+    <section class="breadcrumb-area breadcrumb-bg" data-background="img/banner/banner2.jpg">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -109,7 +109,7 @@
           }
 
           // Fetch movie data from the database
-          $query = "SELECT FilmID, Judul, Gambar, Link_Trailer, Tanggal_Release, Durasi_Film, Rating FROM film";
+          $query = "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.Tanggal_Release Desc";
           $result = mysqli_query($connection, $query);
 
           // Check if the query was successful
@@ -120,14 +120,15 @@
               <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
                 <div class="movie-item movie-item-three mb-50">
                   <div class="movie-poster">
-                    <img src="img/posters/<?php echo $movieData['Gambar']; ?>" alt="Main Image" onerror="this.onerror=null; this.src='../public/img/posters/ucm_poster01.jpg';" />
+                    <img src="img/posters/<?php echo $movieData['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;" >
+                    <!-- onerror="this.onerror=null; this.src='../public/img/posters/ucm_poster01.jpg';" /> -->
                     <!-- Note Dari Galang : ukuran 303x430-->
                     <ul class="overlay-btn">
                       <li>
                         <a href="<?php echo $movieData['Link_Trailer']; ?>" class="popup-video btn">Watch Now</a>
                       </li>
                       <li>
-                        <a href="movie-details.php?film_id=<?php echo $movieData['FilmID']; ?>" class="btn">Details</a>
+                        <a href="movie-details.php?Film_id=<?php echo $movieData['FilmID']; ?>" class="btn">Details</a>
                       </li>
                     </ul>
                   </div>
@@ -136,11 +137,11 @@
                       <h5 class="title">
                         <a href="movie-details.php?film_id=<?php echo $movieData['FilmID']; ?>"><?php echo $movieData['Judul']; ?></a>
                       </h5>
-                      <span class="date"><?php echo $movieData['Tanggal_Release']; ?></span>
+                      <span class="date"><?php echo date("Y",strtotime($movieData["Tanggal_Release"])); ?></span>
                     </div>
                     <div class="bottom">
                       <ul>
-                        <li><span class="quality">hd</span></li>
+                      <li><span class="quality"><?php echo $movieData["Nama_Kategori"]?></span></li>
                         <li>
                           <span class="duration"><i class="far fa-clock"></i> <?php echo $movieData['Durasi_Film']; ?> min</span>
                           <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $movieData['Rating']; ?></span>

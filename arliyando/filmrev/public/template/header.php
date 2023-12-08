@@ -8,7 +8,7 @@
                 <nav class="menu-nav show">
                   <div class="logo">
                     <a href="index.php">
-                      <img src="img/logo/logo.png" alt="Logo" />
+                      <img src="img/logo/logo1.png" alt="Logo" width="140px" />
                     </a>
                   </div>
                   <div class="navbar-wrap main-menu d-none d-lg-flex">

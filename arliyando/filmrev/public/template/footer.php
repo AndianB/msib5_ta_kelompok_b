@@ -6,7 +6,7 @@
               <div class="col-lg-3">
                 <div class="footer-logo">
                   <a href="index.php"
-                    ><img src="img/logo/logo.png" alt=""
+                    ><img src="img/logo/logo1.png" alt="" width="140px"
                   /></a>
                 </div>
               </div>
@@ -30,16 +30,16 @@
                 <div class="footer-social">
                   <ul>
                     <li>
-                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                      <a href="https://www.facebook.com/?locale=id_ID"><i class="fab fa-facebook-f"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fab fa-twitter"></i></a>
+                      <a href="https://twitter.com/?lang=id"><i class="fab fa-twitter"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                      <a href="https://id.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
                     </li>
                     <li>
-                      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="https://id.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                     </li>
                   </ul>
                 </div>
