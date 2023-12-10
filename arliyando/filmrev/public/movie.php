@@ -92,7 +92,7 @@
                 <button class="" data-filter=".cat-4">Comedy</button>
                 <button class="" data-filter=".cat-5">Crime</button>
                 <button class="" data-filter=".cat-6">Drama</button>
-                <button class="" data-filter=".cat-7">Fanasy</button>
+                <button class="" data-filter=".cat-7">Fantasy</button>
                 <button class="" data-filter=".cat-8">Historical</button>
                 <button class="" data-filter=".cat-9">Horror</button>
                 <button class="" data-filter=".cat-10">Romance</button>
