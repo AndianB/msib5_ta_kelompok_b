@@ -272,37 +272,133 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="tr-movie-menu-active text-center">
-              <button class="active" data-filter="*">Action</button>
-              <button class="" data-filter=".cat-one">Comedy</button>
-              <button class="" data-filter=".cat-two">Horror</button>
-              <button class="" data-filter=".cat-three">Adventure</button>
+              <button class="active" data-filter=".cat-one">Action</button>
+              <button class="" data-filter=".cat-two">Comedy</button>
+              <button class="" data-filter=".cat-three">Horror</button>
+              <button class="" data-filter=".cat-four">Romance</button>
             </div>
           </div>
         </div>
         <div class="row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
-          $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.Rating Desc limit 8;");
-          while ($tm = mysqli_fetch_array($query)) {
+          $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='5' ORDER BY f.Rating Desc limit 8;");
+          while ($tm1 = mysqli_fetch_array($query)) {
+          ?>
+            <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one">
+              <div class="movie-item mb-60">
+                <div class="movie-poster">
+                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm1['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                </div>
+                <div class="movie-content">
+                  <div class="top">
+                    <h5 class="title" style="height: 60px;">
+                      <a href="movie-details.php?film_id=<?php echo $tm1['FilmID']; ?>"><?php echo $tm1['Judul']; ?></a>
+                    </h5>
+                    <span class="date"><?php echo date("Y", strtotime($tm1["Tanggal_Release"])); ?></span>
+                  </div>
+                  <div class="bottom">
+                    <ul>
+                      <li><span class="quality"><?php echo $tm1["Nama_Kategori"] ?></span></li>
+                      <li>
+                        <span class="duration"><i class="far fa-clock"></i> <?php echo $tm1["Durasi_Film"] ?> min</span>
+                        <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $tm1['Rating']; ?></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
+        </div>
+        <div class="row tr-movie-active">
+          <?php
+          include '../Admin/config/koneksi.php';
+          $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='4' ORDER BY f.Rating Desc limit 8;");
+          while ($tm2 = mysqli_fetch_array($query)) {
           ?>
             <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
               <div class="movie-item mb-60">
                 <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm2['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
                 </div>
                 <div class="movie-content">
                   <div class="top">
-                    <h5 class="title">
-                      <a href="movie-details.php?film_id=<?php echo $tm['FilmID']; ?>"><?php echo $tm['Judul']; ?></a>
+                    <h5 class="title" style="height: 60px;">
+                      <a href="movie-details.php?film_id=<?php echo $tm2['FilmID']; ?>"><?php echo $tm2['Judul']; ?></a>
                     </h5>
-                    <span class="date"><?php echo date("Y", strtotime($tm["Tanggal_Release"])); ?></span>
+                    <span class="date"><?php echo date("Y", strtotime($tm2["Tanggal_Release"])); ?></span>
                   </div>
                   <div class="bottom">
                     <ul>
-                      <li><span class="quality"><?php echo $tm["Nama_Kategori"] ?></span></li>
+                      <li><span class="quality"><?php echo $tm2["Nama_Kategori"] ?></span></li>
                       <li>
-                        <span class="duration"><i class="far fa-clock"></i> <?php echo $tm["Durasi_Film"] ?> min</span>
-                        <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $tm['Rating']; ?></span>
+                        <span class="duration"><i class="far fa-clock"></i> <?php echo $tm2["Durasi_Film"] ?> min</span>
+                        <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $tm2['Rating']; ?></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
+        </div>
+        <div class="row tr-movie-active">
+          <?php
+          include '../Admin/config/koneksi.php';
+          $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='1' ORDER BY f.Rating Desc limit 8;");
+          while ($tm3 = mysqli_fetch_array($query)) {
+          ?>
+            <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-three">
+              <div class="movie-item mb-60">
+                <div class="movie-poster">
+                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm3['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                </div>
+                <div class="movie-content">
+                  <div class="top">
+                    <h5 class="title" style="height: 60px;">
+                      <a href="movie-details.php?film_id=<?php echo $tm3['FilmID']; ?>"><?php echo $tm3['Judul']; ?></a>
+                    </h5>
+                    <span class="date"><?php echo date("Y", strtotime($tm3["Tanggal_Release"])); ?></span>
+                  </div>
+                  <div class="bottom">
+                    <ul>
+                      <li><span class="quality"><?php echo $tm3["Nama_Kategori"] ?></span></li>
+                      <li>
+                        <span class="duration"><i class="far fa-clock"></i> <?php echo $tm3["Durasi_Film"] ?> min</span>
+                        <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $tm3['Rating']; ?></span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <?php } ?>
+        </div>
+        <div class="row tr-movie-active">
+          <?php
+          include '../Admin/config/koneksi.php';
+          $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='2' ORDER BY f.Rating Desc limit 8;");
+          while ($tm4 = mysqli_fetch_array($query)) {
+          ?>
+            <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-four">
+              <div class="movie-item mb-60">
+                <div class="movie-poster">
+                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm4['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                </div>
+                <div class="movie-content">
+                  <div class="top">
+                    <h5 class="title" style="height: 60px;">
+                      <a href="movie-details.php?film_id=<?php echo $tm4['FilmID']; ?>"><?php echo $tm4['Judul']; ?></a>
+                    </h5>
+                    <span class="date"><?php echo date("Y", strtotime($tm4["Tanggal_Release"])); ?></span>
+                  </div>
+                  <div class="bottom">
+                    <ul>
+                      <li><span class="quality"><?php echo $tm4["Nama_Kategori"] ?></span></li>
+                      <li>
+                        <span class="duration"><i class="far fa-clock"></i> <?php echo $tm4["Durasi_Film"] ?> min</span>
+                        <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $tm4['Rating']; ?></span>
                       </li>
                     </ul>
                   </div>
