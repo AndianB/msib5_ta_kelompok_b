@@ -117,14 +117,14 @@
                       <a href="<?php echo $film1["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film1["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film1['FilmID']; ?>"><?php echo $film1['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film1["Judul"] ?>"><?php echo $film1['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film1["Tanggal_Release"])); ?></span>
                   </div>
@@ -157,14 +157,14 @@
                       <a href="<?php echo $film2["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film2["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film2['FilmID']; ?>"><?php echo $film2['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film2["Judul"] ?>"><?php echo $film2['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film2["Tanggal_Release"])); ?></span>
                   </div>
@@ -197,14 +197,14 @@
                       <a href="<?php echo $film3["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film3["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film3['FilmID']; ?>"><?php echo $film3['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film3["Judul"] ?>"><?php echo $film3['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film3["Tanggal_Release"])); ?></span>
                   </div>
@@ -237,14 +237,14 @@
                       <a href="<?php echo $film4["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film4["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film4['FilmID']; ?>"><?php echo $film4['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film4["Judul"] ?>"><?php echo $film4['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film4["Tanggal_Release"])); ?></span>
                   </div>
@@ -277,14 +277,14 @@
                       <a href="<?php echo $film5["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film5["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film5['FilmID']; ?>"><?php echo $film5['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film5["Judul"] ?>"><?php echo $film5['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film5["Tanggal_Release"])); ?></span>
                   </div>
@@ -317,14 +317,14 @@
                       <a href="<?php echo $film6["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film6["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film6['FilmID']; ?>"><?php echo $film6['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film6["Judul"] ?>"><?php echo $film6['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film6["Tanggal_Release"])); ?></span>
                   </div>
@@ -357,14 +357,14 @@
                       <a href="<?php echo $film7["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film7["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film7['FilmID']; ?>"><?php echo $film7['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film7["Judul"] ?>"><?php echo $film7['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film7["Tanggal_Release"])); ?></span>
                   </div>
@@ -397,14 +397,14 @@
                       <a href="<?php echo $film8["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film8["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film8['FilmID']; ?>"><?php echo $film8['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film8["Judul"] ?>"><?php echo $film8['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film8["Tanggal_Release"])); ?></span>
                   </div>
@@ -437,14 +437,14 @@
                       <a href="<?php echo $film9["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film9["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film9['FilmID']; ?>"><?php echo $film9['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film9["Judul"] ?>"><?php echo $film9['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film9["Tanggal_Release"])); ?></span>
                   </div>
@@ -477,14 +477,14 @@
                       <a href="<?php echo $film10["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film10["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film10['FilmID']; ?>"><?php echo $film10['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film10["Judul"] ?>"><?php echo $film10['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film10["Tanggal_Release"])); ?></span>
                   </div>
@@ -517,14 +517,14 @@
                       <a href="<?php echo $film11["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film11["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film11['FilmID']; ?>"><?php echo $film11['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film11["Judul"] ?>"><?php echo $film11['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film11["Tanggal_Release"])); ?></span>
                   </div>
@@ -557,14 +557,14 @@
                       <a href="<?php echo $film12["Link_Trailer"] ?>" class="popup-video btn">Watch Now</a>
                     </li>
                     <li>
-                      <a href="movie-details.php" class="btn">Details</a>
+                      <a href="movie-details.php.?Judul=<?php echo $film12["Judul"] ?>" class="btn">Details</a>
                     </li>
                   </ul>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $film12['FilmID']; ?>"><?php echo $film12['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $film12["Judul"] ?>"><?php echo $film12['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($film12["Tanggal_Release"])); ?></span>
                   </div>

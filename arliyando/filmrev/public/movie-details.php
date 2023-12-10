@@ -52,23 +52,24 @@
   <main>
     <!-- movie-details-area -->
     <section class="movie-details-area" data-background="img/bg/movie_details_bg.jpg">
-      <div class="container mt-5">
+      <div class="container">
         <?php
         include '../Admin/config/koneksi.php';
-        $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.Rating Desc limit 1;");
+        $judul =  htmlspecialchars($_GET['Judul']);
+        $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID Where Judul='$judul'");
         while ($dm = mysqli_fetch_array($query)) {
         ?>
           <div class="row align-items-center position-relative">
             <div class="col-xl-3 col-lg-4">
               <div class="movie-details-img">
-                <img src="img/poster/movie_details_img.jpg" alt="">
-                <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video"><img src="img/posters/<?php echo $dm['Gambar']; ?>" alt=""></a>
+                <img src="img/poster/movie_details_img.jpg" alt="" >
+                <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video"><img src="img/posters/<?php echo $dm['Gambar']; ?>" alt="" style="width: 303px; height: 430px;"></a>
               </div>
             </div>
-            <div class="col-xl-6 col-lg-8">
+            <div class="col-xl-9 col-lg-8">
               <div class="movie-details-content">
                 <h5>Filmrev</h5>
-                <h2><?php echo $dm['Judul']; ?></h2>
+                <h3 class="mb-4"><?php echo $dm['Judul']; ?></h3>
                 <div class="banner-meta">
                   <ul>
                     <li class="quality">
@@ -92,9 +93,6 @@
       </div>
     </section>
     <!-- movie-details-area-end -->
-
-    <!-- episode-area -->
-    <!-- episode-area-end -->
 
     <!-- tv-series-area -->
     <section class="tv-series-area tv-series-bg" data-background="img/bg/tv_series_bg02.jpg">

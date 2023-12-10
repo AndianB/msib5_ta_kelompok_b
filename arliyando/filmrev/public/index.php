@@ -134,12 +134,12 @@
               ?>
                 <div class="movie-item mb-50">
                   <div class="movie-poster">
-                    <a href="movie-details.php"><img src="img/posters/<?php echo $upmovie1['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
+                    <a href="movie-details.php.?Judul=<?php echo $upmovie1["Judul"] ?>"><img src="img/posters/<?php echo $upmovie1['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
                   </div>
                   <div class="movie-content">
                     <div class="top">
                       <h5 class="title">
-                        <a href="movie-details.php?film_id=<?php echo $upmovie1['FilmID']; ?>"><?php echo $upmovie1['Judul']; ?></a>
+                        <a href="movie-details.php.?Judul=<?php echo $upmovie1["Judul"] ?>"><?php echo $upmovie1['Judul']; ?></a>
                       </h5>
                       <span class="date"><?php echo date("Y", strtotime($upmovie1["Tanggal_Release"])); ?></span>
                     </div>
@@ -166,12 +166,12 @@
               ?>
                 <div class="movie-item mb-50">
                   <div class="movie-poster">
-                    <a href="movie-details.php"><img src="img/posters/<?php echo $upmovie2['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
+                    <a href="movie-details.php.?Judul=<?php echo $upmovie2["Judul"] ?>"><img src="img/posters/<?php echo $upmovie2['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
                   </div>
                   <div class="movie-content">
                     <div class="top">
                       <h5 class="title">
-                        <a href="movie-details.php?film_id=<?php echo $upmovie2['FilmID']; ?>"><?php echo $upmovie2['Judul']; ?></a>
+                        <a href="movie-details.php.?Judul=<?php echo $upmovie2["Judul"] ?>"><?php echo $upmovie2['Judul']; ?></a>
                       </h5>
                       <span class="date"><?php echo date("Y", strtotime($upmovie2["Tanggal_Release"])); ?></span>
                     </div>
@@ -198,12 +198,12 @@
               ?>
                 <div class="movie-item mb-50">
                   <div class="movie-poster">
-                    <a href="movie-details.php"><img src="img/posters/<?php echo $upmovie3['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
+                    <a href="movie-details.php.?Judul=<?php echo $upmovie3["Judul"] ?>"><img src="img/posters/<?php echo $upmovie3['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
                   </div>
                   <div class="movie-content">
                     <div class="top">
                       <h5 class="title">
-                        <a href="movie-details.php?film_id=<?php echo $upmovie3['FilmID']; ?>"><?php echo $upmovie3['Judul']; ?></a>
+                        <a href="movie-details.php.?Judul=<?php echo $upmovie3["Judul"] ?>"><?php echo $upmovie3['Judul']; ?></a>
                       </h5>
                       <span class="date"><?php echo date("Y", strtotime($upmovie3["Tanggal_Release"])); ?></span>
                     </div>
@@ -230,12 +230,12 @@
               ?>
                 <div class="movie-item mb-50">
                   <div class="movie-poster">
-                    <a href="movie-details.php"><img src="img/posters/<?php echo $upmovie4['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
+                    <a href="movie-details.php.?Judul=<?php echo $upmovie4["Judul"] ?>"><img src="img/posters/<?php echo $upmovie4['Gambar']; ?>" alt="Main Image" style="width: 303px; height: 430px;"></a>
                   </div>
                   <div class="movie-content">
                     <div class="top">
                       <h5 class="title">
-                        <a href="movie-details.php?film_id=<?php echo $upmovie4['FilmID']; ?>"><?php echo $upmovie4['Judul']; ?></a>
+                        <a href="movie-details.php.?Judul=<?php echo $upmovie4["Judul"] ?>"><?php echo $upmovie4['Judul']; ?></a>
                       </h5>
                       <span class="date"><?php echo date("Y", strtotime($upmovie4["Tanggal_Release"])); ?></span>
                     </div>
@@ -288,12 +288,12 @@
             <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-one">
               <div class="movie-item mb-60">
                 <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm1['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                  <a href="movie-details.php.?Judul=<?php echo $tm1["Judul"] ?>"><img src="img/posters/<?php echo $tm1['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $tm1['FilmID']; ?>"><?php echo $tm1['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $tm1["Judul"] ?>"><?php echo $tm1['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($tm1["Tanggal_Release"])); ?></span>
                   </div>
@@ -320,12 +320,12 @@
             <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-two">
               <div class="movie-item mb-60">
                 <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm2['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                  <a href="movie-details.php.?Judul=<?php echo $tm2["Judul"] ?>"><img src="img/posters/<?php echo $tm2['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $tm2['FilmID']; ?>"><?php echo $tm2['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $tm2["Judul"] ?>"><?php echo $tm2['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($tm2["Tanggal_Release"])); ?></span>
                   </div>
@@ -352,12 +352,12 @@
             <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-three">
               <div class="movie-item mb-60">
                 <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm3['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                  <a href="movie-details.php.?Judul=<?php echo $tm3["Judul"] ?>"><img src="img/posters/<?php echo $tm3['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $tm3['FilmID']; ?>"><?php echo $tm3['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $tm3["Judul"] ?>"><?php echo $tm3['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($tm3["Tanggal_Release"])); ?></span>
                   </div>
@@ -384,12 +384,12 @@
             <div class="col-xl-3 col-lg-4 col-sm-6 grid-item grid-sizer cat-four">
               <div class="movie-item mb-60">
                 <div class="movie-poster">
-                  <a href="movie-details.php"><img src="img/posters/<?php echo $tm4['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
+                  <a href="movie-details.php.?Judul=<?php echo $tm4["Judul"] ?>"><img src="img/posters/<?php echo $tm4['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
                 </div>
                 <div class="movie-content">
                   <div class="top">
                     <h5 class="title" style="height: 60px;">
-                      <a href="movie-details.php?film_id=<?php echo $tm4['FilmID']; ?>"><?php echo $tm4['Judul']; ?></a>
+                      <a href="movie-details.php.?Judul=<?php echo $tm4["Judul"] ?>"><?php echo $tm4['Judul']; ?></a>
                     </h5>
                     <span class="date"><?php echo date("Y", strtotime($tm4["Tanggal_Release"])); ?></span>
                   </div>
