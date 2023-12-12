@@ -133,7 +133,7 @@
                 </p>
                 <div class="blog-post-meta">
                   <div class="blog-post-share">
-                    <a href="https://web.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&u=https%3A%2F%2Fed7f-203-190-50-140.ngrok-free.app%2Fplaceholder%2Fmsib5_ta_kelompok_b%2Farliyando%2Ffilmrev%2Fpublic%2Fabout.php%2F&display=popup&ref=plugin&src=share_button"><i class="fab fa-facebook-f"></i></a>
                     <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
                     <a href="https://id.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
                   </div>
