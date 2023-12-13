@@ -74,13 +74,13 @@
     <!-- breadcrumb-area-end -->
 
     <!-- movie-area -->
-    <section class="movie-area movie-bg" data-background="img/bg/movie_bg.jpg">
+    <section class="movie-area movie-bg" data-background="img/bg/movie_bg.jpg" style="background-size: contain;">
       <div class="container">
         <div class="row align-items-end mb-60">
           <div class="col-lg-4">
             <div class="section-title text-center text-lg-left">
               <span class="sub-title">Filmrev</span>
-              <h2 class="title">New Release Movies</h2>
+              <h2 class="title">Explore the Movies</h2>
             </div>
           </div>
           <div class="col-lg-8">

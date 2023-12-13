@@ -52,7 +52,7 @@
   <main>
     <!-- movie-details-area -->
     <section class="movie-details-area" data-background="img/bg/movie_details_bg.jpg">
-      <div class="container">
+      <div class="container mt-5">
         <?php
         include '../Admin/config/koneksi.php';
         $judul =  htmlspecialchars($_GET['Judul']);
@@ -62,8 +62,8 @@
           <div class="row align-items-center position-relative">
             <div class="col-xl-3 col-lg-4">
               <div class="movie-details-img">
-                <img src="img/poster/movie_details_img.jpg" alt="" >
-                <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E" class="popup-video"><img src="img/posters/<?php echo $dm['Gambar']; ?>" alt="" style="width: 303px; height: 430px;"></a>
+                <img src="img/poster/movie_details_img.jpg" alt="">
+                <a class="popup-video"><img src="img/posters/<?php echo $dm['Gambar']; ?>" alt="" style="width: 303px; height: 430px;"></a>
               </div>
             </div>
             <div class="col-xl-9 col-lg-8">
@@ -84,8 +84,20 @@
                     </li>
                   </ul>
                 </div>
-                <p><?php echo $dm["Synopsis"]?>
+                <p>
+                  <?php echo substr($dm["Synopsis"], 0, 400) ?>
+                  <a>....</a>
                 </p>
+                <div class="movie-details-prime">
+                  <ul>
+                    <li class="share"><a href="https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&u=https%3A%2F%2Fed7f-203-190-50-140.ngrok-free.app%2Fplaceholder%2Fmsib5_ta_kelompok_b%2Farliyando%2Ffilmrev%2Fpublic%2Fabout.php%2F&display=popup&ref=plugin&src=share_button"><i class="fab fa-facebook-f"></i> Share</a></li>
+                    <li class="streaming">
+                      <h6>Prime Video</h6>
+                      <span>Watch Trailer -></span>
+                    </li>
+                    <li class="watch"><a href="<?php echo $dm["Link_Trailer"] ?>" class="btn popup-video"><i class="fas fa-play"></i> Watch Now</a></li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -94,113 +106,84 @@
     </section>
     <!-- movie-details-area-end -->
 
-    <!-- tv-series-area -->
+    <!-- Synopsis -->
+    <section class="episode-area episode-bg" data-background="img/bg/episode_bg.jpg" style="padding: 5px;">
+      <div class="container mb-5">
+        <div class="col-12">
+          <?php
+          include '../Admin/config/koneksi.php';
+          $judul =  htmlspecialchars($_GET['Judul']);
+          $query = mysqli_query($conn, "SELECT Synopsis from film Where Judul='$judul'");
+          while ($sm = mysqli_fetch_array($query)) {
+          ?>
+            <div class="movie-history-wrap">
+              <h3 class="title">About <span>History</span></h3>
+              <p><?php echo $sm["Synopsis"] ?></p>
+            </div>
+          <?php } ?>
+          <div class="row m-3">
+            <p class="mt-3"><span style="color: #e4d804;">Actors : </span></p>
+            <?php
+            include '../Admin/config/koneksi.php';
+            $judul =  htmlspecialchars($_GET['Judul']);
+            $query = mysqli_query($conn, "SELECT f.Judul, f.Synopsis, fc.*, lc.Nama_Cast FROM film_cast as fc JOIN film as f on f.FilmID=fc.FilmID JOIN list_cast as lc on lc.CastID=fc.CastID Where f.Judul='$judul'");
+            while ($actors = mysqli_fetch_array($query)) {
+            ?>
+              <p class="mt-3"><?php echo ($actors["Nama_Cast"] . ", ") ?> </p>
+            <?php } ?>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Synopsis end -->
+
+    <!-- Recommendation-area -->
     <section class="tv-series-area tv-series-bg" data-background="img/bg/tv_series_bg02.jpg">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="section-title text-center mb-50">
-              <span class="sub-title">Best TV Series</span>
-              <h2 class="title">World Best TV Series</h2>
+              <span class="sub-title">Filmrev</span>
+              <h2 class="title">Recomendation Movies</h2>
             </div>
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-xl-3 col-lg-4 col-sm-6">
-            <div class="movie-item mb-50">
-              <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster09.jpg" alt=""></a>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title"><a href="movie-details.html">Women's Day</a></h5>
-                  <span class="date">2021</span>
+          <?php
+          include '../Admin/config/koneksi.php';
+          $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY rand() limit 4;");
+          while ($rm = mysqli_fetch_array($query)) {
+          ?>
+            <div class="col-xl-3 col-lg-4 col-sm-6">
+              <div class="movie-item mb-50">
+                <div class="movie-poster">
+                  <a href="movie-details.php.?Judul=<?php echo $rm["Judul"] ?>"><img src="img/posters/<?php echo $rm['Gambar']; ?>" alt="" style="width: 303px; height: 430px;" /></a>
                 </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6">
-            <div class="movie-item mb-50">
-              <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster10.jpg" alt=""></a>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title"><a href="movie-details.html">The Perfect Match</a></h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">4k</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
+                <div class="movie-content">
+                  <div class="top">
+                    <h5 class="title" style="height: 60px;">
+                      <a href="movie-details.php.?Judul=<?php echo $rm["Judul"] ?>"><?php echo $rm['Judul']; ?></a>
+                    </h5>
+                    <span class="date"><?php echo date("Y", strtotime($rm["Tanggal_Release"])); ?></span>
+                  </div>
+                  <div class="bottom">
+                    <ul>
+                      <li><span class="quality"><?php echo $rm["Nama_Kategori"] ?></span></li>
+                      <li>
+                        <span class="duration"><i class="far fa-clock"></i> <?php echo $rm["Durasi_Film"] ?> min</span>
+                        <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $rm['Rating']; ?></span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6">
-            <div class="movie-item mb-50">
-              <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster03.jpg" alt=""></a>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title"><a href="movie-details.html">The Dog Woof</a></h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xl-3 col-lg-4 col-sm-6">
-            <div class="movie-item mb-50">
-              <div class="movie-poster">
-                <a href="movie-details.html"><img src="img/poster/ucm_poster04.jpg" alt=""></a>
-              </div>
-              <div class="movie-content">
-                <div class="top">
-                  <h5 class="title"><a href="movie-details.html">The Easy Reach</a></h5>
-                  <span class="date">2021</span>
-                </div>
-                <div class="bottom">
-                  <ul>
-                    <li><span class="quality">hd</span></li>
-                    <li>
-                      <span class="duration"><i class="far fa-clock"></i> 128 min</span>
-                      <span class="rating"><i class="fas fa-thumbs-up"></i> 3.5</span>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php } ?>
         </div>
       </div>
     </section>
-    <!-- tv-series-area-end -->
+    <!-- Recommendation-area-end -->
 
-    <!-- newsletter-area -->
-    <!-- newsletter-area-end -->
 
   </main>
   <!-- main-area-end -->

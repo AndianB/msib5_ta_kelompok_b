@@ -68,7 +68,7 @@
                   Filmrev
                 </h6>
                 <h2 class="title wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.8s">
-                  Enjoy Unlimited <span>Movie</span>, Hit Series, & More.
+                  Rating, Top <span>Movie</span>, Best, Hit Movie, & More.
                 </h2>
                 <h3 class="subtitle wow fadeInUp" data-wow-delay=".4s" data-wow-duration="1.8s"><?php echo $banner["Judul"] ?></h3>
                 <div class="banner-meta wow fadeInUp" data-wow-delay=".6s" data-wow-duration="1.8s">
@@ -95,14 +95,14 @@
     <!-- banner-area-end -->
 
     <!-- up-coming-movie-area -->
-    <section class="ucm-area ucm-bg" data-background="img/bg/ucm_bg.jpg">
+    <section class="ucm-area ucm-bg" data-background="img/banner/banner3.jpg">
       <div class="ucm-bg-shape" data-background="img/bg/ucm_bg_shape.png"></div>
       <div class="container">
         <div class="row align-items-end mb-55">
           <div class="col-lg-6">
             <div class="section-title text-center text-lg-left">
               <span class="sub-title">Filmrev</span>
-              <h2 class="title">Upcoming Movies</h2>
+              <h2 class="title">Latest Movies</h2>
             </div>
           </div>
           <div class="col-lg-6">
