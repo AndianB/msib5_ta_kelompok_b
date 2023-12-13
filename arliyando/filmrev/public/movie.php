@@ -1,3 +1,7 @@
+<?php
+$page = "Film"
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -49,6 +53,7 @@
 
   <!-- main-area -->
   <main>
+    
     <!-- breadcrumb-area -->
     <section class="breadcrumb-area breadcrumb-bg" data-background="img/banner/banner2.jpg">
       <div class="container">
@@ -102,7 +107,7 @@
             </div>
           </div>
         </div>
-        <div class="row tr-movie-active">
+        <div class="all row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.FilmID asc");
@@ -142,7 +147,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="action row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='5' ORDER BY f.FilmID asc");
@@ -182,7 +187,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="adventure row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='6' ORDER BY f.FilmID asc");
@@ -222,7 +227,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="comedy row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='4' ORDER BY f.FilmID asc");
@@ -262,7 +267,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="crime row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='11' ORDER BY f.FilmID asc");
@@ -302,7 +307,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="drama row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='7' ORDER BY f.FilmID asc");
@@ -342,7 +347,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="fantasy row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='9' ORDER BY f.FilmID asc");
@@ -382,7 +387,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="historical row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='10' ORDER BY f.FilmID asc");
@@ -422,7 +427,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="horror row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='1' ORDER BY f.FilmID asc");
@@ -462,7 +467,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="romance row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='2' ORDER BY f.FilmID asc");
@@ -502,7 +507,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="science row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='8' ORDER BY f.FilmID asc");
@@ -542,7 +547,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="row tr-movie-active">
+        <div class="thriller row tr-movie-active">
           <?php
           include '../Admin/config/koneksi.php';
           $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID where f.GenreID='3' ORDER BY f.FilmID asc");

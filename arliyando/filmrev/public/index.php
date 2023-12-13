@@ -1,3 +1,7 @@
+<?php
+$page = "Home"
+?>
+
 <!DOCTYPE html>
 <html class="no-js" lang="">
 
@@ -57,7 +61,7 @@
     <section class="banner-area banner-bg" data-background="img/banner/banner1.jpg">
       <?php
       include '../Admin/config/koneksi.php';
-      $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY f.FilmID ASC limit 1;");
+      $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID ORDER BY rand() limit 1;");
       while ($banner = mysqli_fetch_array($query)) {
       ?>
         <div class="container custom-container">
@@ -129,7 +133,7 @@
             <div class="ucm-active owl-carousel">
               <?php
               include '../Admin/config/koneksi.php';
-              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='5';");
+              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='5' order by f.Tanggal_Release desc;");
               while ($upmovie1 = mysqli_fetch_array($query)) {
               ?>
                 <div class="movie-item mb-50">
@@ -161,7 +165,7 @@
             <div class="ucm-active owl-carousel">
               <?php
               include '../Admin/config/koneksi.php';
-              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='1';");
+              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='1'order by f.Tanggal_Release desc;");
               while ($upmovie2 = mysqli_fetch_array($query)) {
               ?>
                 <div class="movie-item mb-50">
@@ -193,7 +197,7 @@
             <div class="ucm-active owl-carousel">
               <?php
               include '../Admin/config/koneksi.php';
-              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='4';");
+              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='4' order by f.Tanggal_Release desc ;");
               while ($upmovie3 = mysqli_fetch_array($query)) {
               ?>
                 <div class="movie-item mb-50">
@@ -225,7 +229,7 @@
             <div class="ucm-active owl-carousel">
               <?php
               include '../Admin/config/koneksi.php';
-              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='2';");
+              $query = mysqli_query($conn, "SELECT f.*, g.Nama_Genre, k.Nama_Kategori FROM film AS f JOIN genre AS g ON g.GenreID=f.GenreID JOIN kategori_umur AS k ON k.KategoriID=f.KategoriID WHERE f.GenreID='2' order by f.Tanggal_Release desc ;");
               while ($upmovie4 = mysqli_fetch_array($query)) {
               ?>
                 <div class="movie-item mb-50">

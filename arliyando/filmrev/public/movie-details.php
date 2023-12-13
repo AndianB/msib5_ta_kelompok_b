@@ -1,3 +1,7 @@
+<?php
+$page = "Detail-Film"
+?>
+
 <!doctype html>
 <html class="no-js" lang="">
 
@@ -50,6 +54,7 @@
 
   <!-- main-area -->
   <main>
+
     <!-- movie-details-area -->
     <section class="movie-details-area" data-background="img/bg/movie_details_bg.jpg">
       <div class="container mt-5">
@@ -121,15 +126,15 @@
               <p><?php echo $sm["Synopsis"] ?></p>
             </div>
           <?php } ?>
-          <div class="row m-3">
-            <p class="mt-3"><span style="color: #e4d804;">Actors : </span></p>
+          <div class="row m-4">
+            <p class="mt-3"><span style="color: #e4d804;">Actors :  </span></p>
             <?php
             include '../Admin/config/koneksi.php';
             $judul =  htmlspecialchars($_GET['Judul']);
             $query = mysqli_query($conn, "SELECT f.Judul, f.Synopsis, fc.*, lc.Nama_Cast FROM film_cast as fc JOIN film as f on f.FilmID=fc.FilmID JOIN list_cast as lc on lc.CastID=fc.CastID Where f.Judul='$judul'");
             while ($actors = mysqli_fetch_array($query)) {
             ?>
-              <p class="mt-3"><?php echo ($actors["Nama_Cast"] . ", ") ?> </p>
+              <p class="mt-3" style="margin-left: 5px;"><?php echo ($actors["Nama_Cast"]) . "," ?></p>
             <?php } ?>
           </div>
         </div>
@@ -144,7 +149,7 @@
           <div class="col-lg-8">
             <div class="section-title text-center mb-50">
               <span class="sub-title">Filmrev</span>
-              <h2 class="title">Recomendation Movies</h2>
+              <h2 class="title">Recommendation Movies</h2>
             </div>
           </div>
         </div>
