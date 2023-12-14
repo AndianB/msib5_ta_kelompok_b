@@ -81,7 +81,7 @@ $page = "Detail-Film"
                       <span><?php echo $dm["Nama_Kategori"] ?></span>
                     </li>
                     <li class="category">
-                      <a href="#"><?php echo $dm["Nama_Genre"] ?></a>
+                      <a><?php echo $dm["Nama_Genre"] ?></a>
                     </li>
                     <li class="release-time">
                       <span><i class="far fa-calendar-alt"></i> <?php echo date("Y", strtotime($dm["Tanggal_Release"])); ?></span>
