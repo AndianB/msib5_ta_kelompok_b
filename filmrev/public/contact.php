@@ -90,10 +90,10 @@ $page = "Contact"
                 <form action="proses_kontak.php" method="post">
                   <div class="row">
                     <div class="col-md-6">
-                      <input type="text" name="name" placeholder="You Name *" />
+                      <input type="text" name="name" placeholder="You Name *" required />
                     </div>
                     <div class="col-md-6">
-                      <input type="email" name="email" placeholder="You  Email *" />
+                      <input type="email" name="email" placeholder="You  Email *" required />
                     </div>
                   </div>
                   <input type="text" name="subject" placeholder="Subject *" />
