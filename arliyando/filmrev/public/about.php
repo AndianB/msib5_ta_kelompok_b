@@ -140,58 +140,6 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="avatar-post mt-40 mb-80">
-              <div class="post-avatar-img">
-                <img src="img/blog/post_avatar_img.png" alt="img" />
-              </div>
-              <div class="post-avatar-content">
-                <h5>Thomas Herlihy</h5>
-                <p>
-                  Printing and typetting industry. Lorem Ipsum has been the
-                  instry standrd the dummy text ever since the, when an
-                  unknown printer took a galley .
-                </p>
-                <ul>
-                  <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                  </li>
-                  <li>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                  </li>
-                </ul>
-              </div>
-            </div> -->
-            <!-- <div class="blog-comment mb-80">
-              <div class="widget-title mb-45">
-                <h5 class="title">Comments</h5>
-              </div>
-              <ul>
-                <li>
-                  <div class="single-comment">
-                    <div class="comment-avatar-img">
-                      <img src="img/blog/comment_avatar01.jpg" alt="img" />
-                    </div>
-                    <div class="comment-text">
-                      <div class="comment-avatar-info">
-                        <h5>
-                          Daisy Waterstone
-                          <span class="comment-date">November 13, 2021</span>
-                        </h5>
-                      </div>
-                      <p>
-                        Printing and typetting industry. Lorem Ipsum has been
-                        the instry standrd the dummy text ever since the, when
-                        an unknown printer took a galley .
-                      </p>
-                    </div>
-                  </div>
-                </li>
-
-              </ul>
-            </div> -->
             <?php
             $conn = mysqli_connect("127.0.0.1", "root", "", "db_film");
 
@@ -255,27 +203,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="col-lg-4">
-            <aside class="blog-sidebar">
-              <div class="widget blog-widget">
-                <div class="widget-title mb-30">
-                  <h5 class="title">Search Genre</h5>
-                </div>
-                <div class="tag-list">
-                  <ul>
-                    <li><a href="#">Movies</a></li>
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Romantic</a></li>
-                    <li><a href="#">Who</a></li>
-                    <li><a href="#">English</a></li>
-                    <li><a href="#">Blending</a></li>
-                  </ul>
-                </div>
-              </div>
-            </aside>
-          </div> -->
         </div>
       </div>
     </section>
