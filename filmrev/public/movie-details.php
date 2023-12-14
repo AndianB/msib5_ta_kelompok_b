@@ -87,6 +87,9 @@ $page = "Detail-Film"
                       <span><i class="far fa-calendar-alt"></i> <?php echo date("Y", strtotime($dm["Tanggal_Release"])); ?></span>
                       <span class="duration"><i class="far fa-clock"></i> <?php echo $dm["Durasi_Film"] ?> min</span>
                     </li>
+                    <li>
+                      <span class="rating"><i class="fas fa-thumbs-up"></i> <?php echo $dm['Rating']; ?></span>
+                    </li>
                   </ul>
                 </div>
                 <p>
