@@ -11,23 +11,20 @@
                       <img src="img/logo/logo1.png" alt="Logo" width="140px" />
                     </a>
                   </div>
-                  <div class="navbar-wrap main-menu d-none d-lg-flex">
-                    <ul class="navigation">
-                      <li>
+                  <div class="active navbar-wrap main-menu d-none d-lg-flex">
+                    <ul class="active navigation">
+                      <li <?php if($page=="Home") echo "class='active'"; ?>>
                         <a href="index.php">Home</a>
                       </li>
-                      <!-- <li class="menu-item-has-children">
-                        <a href="#">Genre</a>
-                        <ul class="submenu">
-                          <li><a href="movie.php">Genre 1</a></li>
-                          <li><a href="movie.php">Genre 2</a></li>
-                        </ul>
-                      </li> -->
-                      <li><a href="movie.php">Film</a></li>
-                      <li class="menu-item-has-children">
+                      <li <?php if($page=="Film") echo "class='active'"; ?>>
+                        <a href="movie.php">Film</a>
+                      </li>
+                      <li <?php if($page=="About") echo "class='active'"; ?>>
                         <a href="about.php">About</a>
                       </li>
-                      <li><a href="contact.php">Contact</a></li>
+                      <li <?php if($page=="Contact") echo "class='active'"; ?>>
+                        <a href="contact.php">Contact</a>
+                      </li>
                     </ul>
                   </div>
                 </nav>
@@ -73,7 +70,7 @@
               <!-- End Mobile Menu -->
 
               <!-- Modal Search -->
-              <div
+              <!-- <div
                 class="modal fade"
                 id="search-modal"
                 tabindex="-1"
@@ -88,7 +85,7 @@
                     </form>
                   </div>
                 </div>
-              </div>
+              </div> -->
               <!-- Modal Search-end -->
             </div>
           </div>
