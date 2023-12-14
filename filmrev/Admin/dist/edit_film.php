@@ -86,7 +86,7 @@
 
                     <div class="content">
                         <div class="container-fluid">
-                            <div class="row">
+                            <div class="row"> 
                                 <div class="col">
                                     <form action="proses_update_data_film.php?FilmID=<?php echo $_GET['FilmID']?>" method="post" enctype="multipart/form-data">
                                     <div class="mb-3">
@@ -101,6 +101,7 @@
                                             <label class="form-label" for="image">Gambar</label> <br>
                                             <img src="../../public/img/posters/<?php echo $Gambar ?>" width="100px">
                                             <input type="file" class="form-control mt-2" id="image" name="image" value="<?php echo $Gambar ?>">
+                                            <input type="hidden" class="form-control mt-2" id="imagelama" name="imagelama" value="<?php echo $Gambar ?>">
                                         </div>
                                         <div class=" mb-3">
                                             <label for="exampleFormControlInput1" class="form-label">Link Trailer</label>

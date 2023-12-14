@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Kontak - Admin | Filmrev</title>
+    <title>Ulasan - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -56,10 +56,10 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Kontak</li>
+                                        <li class="breadcrumb-item active">Ulasan</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Data Kontak</h4>
+                                <h4 class="page-title">Data Ulasan</h4>
                             </div>
                         </div>
                     </div>
@@ -68,23 +68,19 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="card">
-                                <!-- <div class="card-header">
-                                    <a class="btn btn-primary text-light" href="tambah_cast.php"> Tambah Data </a>
-                                </div> -->
+
                                 <div class="card-body">
                                     <?php
                                     include '../config/koneksi.php';
-                                    $query = mysqli_query($conn, "SELECT * from kontak;");
+                                    $query = mysqli_query($conn, "SELECT * from ulasan Order by UlasanID asc;");
                                     ?>
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 
                                         <thead>
                                             <tr>
-                                                <th>Kontak ID</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Subject</th>
-                                                <th>Message</th>
+                                                <th>Ulasan ID</th>
+                                                <th>Username</th>
+                                                <th>Ulasan</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -96,13 +92,12 @@
                                                 while ($data = mysqli_fetch_array($query)) {
                                             ?>
                                                     <tr>
-                                                        <td> <?php echo $data["KontakID"] ?></td>
-                                                        <td> <?php echo $data["Name"] ?></td>
-                                                        <td> <?php echo $data["Email"] ?></td>
-                                                        <td> <?php echo $data["Subject"] ?></td>
-                                                        <td> <?php echo $data["Message"] ?></td>
+                                                        <td> <?php echo $data["UlasanID"] ?></td>
+                                                        <td> <?php echo $data["Username"] ?></td>
+                                                        <td> <?php echo $data["Ulasan_Text"] ?></td>
                                                         <td>
-                                                            <a href="proses_hapus_kontak.php?KontakID=<?php echo $data["KontakID"] ?>" onclick="konfirmasiHapus( . $data['KontakID'] . )" class="btn btn-danger btn-sm">Delete</a>
+                                                            <a href="edit_ulasan.php?UlasanID=<?php echo $data["UlasanID"] ?>" class="btn btn-warning btn-sm">Edit</a>
+                                                            <a href="proses_hapus_ulasan.php?UlasanID=<?php echo $data["UlasanID"] ?>" onclick="return confirm('Yakin mau hapus data?')" class="btn btn-danger btn-sm">Delete</a>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>

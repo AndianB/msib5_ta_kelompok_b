@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Kategori Umur - Admin | Filmrev</title>
+    <title>Kontak - Admin | Filmrev</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta content="A fully responsive admin theme which can be used to build CRM, CMS,ERP etc." name="description" />
     <meta content="Techzaa" name="author" />
@@ -56,10 +56,10 @@
                                     <ol class="breadcrumb m-0">
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Filmrev</a></li>
                                         <li class="breadcrumb-item"><a href="javascript: void(0);">Tables</a></li>
-                                        <li class="breadcrumb-item active">Kategori</li>
+                                        <li class="breadcrumb-item active">Kontak</li>
                                     </ol>
                                 </div>
-                                <h4 class="page-title">Data Kategori</h4>
+                                <h4 class="page-title">Data Kontak</h4>
                             </div>
                         </div>
                     </div>
@@ -69,19 +69,22 @@
                         <div class="col-12">
                             <div class="card">
                                 <!-- <div class="card-header">
-                                <a class="btn btn-primary text-light"> Tambah Data </a>
+                                    <a class="btn btn-primary text-light" href="tambah_cast.php"> Tambah Data </a>
                                 </div> -->
                                 <div class="card-body">
                                     <?php
                                     include '../config/koneksi.php';
-                                    $query = mysqli_query($conn, "SELECT * from kategori_umur;");
+                                    $query = mysqli_query($conn, "SELECT * from kontak;");
                                     ?>
                                     <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
 
                                         <thead>
                                             <tr>
-                                                <th>Kategori ID</th>
-                                                <th>Nama Kategori</th>
+                                                <th>Kontak ID</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Subject</th>
+                                                <th>Message</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -93,23 +96,24 @@
                                                 while ($data = mysqli_fetch_array($query)) {
                                             ?>
                                                     <tr>
-                                                        <td> <?php echo $data["KategoriID"] ?></td>
-                                                        <td> <?php echo $data["Nama_Kategori"] ?></td>
+                                                        <td> <?php echo $data["KontakID"] ?></td>
+                                                        <td> <?php echo $data["Name"] ?></td>
+                                                        <td> <?php echo $data["Email"] ?></td>
+                                                        <td> <?php echo $data["Subject"] ?></td>
+                                                        <td> <?php echo $data["Message"] ?></td>
                                                         <td>
-                                                            <a href="edit_kategori.php?KategoriID=<?php echo $data["KategoriID"] ?>" class="btn btn-warning btn-sm">Edit</a>
-                                                            <a href="proses_hapus_kategori.php?KategoriID=<?php echo $data["KategoriID"] ?>" onclick="konfirmasiHapus( . $data['KategoriID'] . )" class="btn btn-danger btn-sm">Delete</a>
+                                                            <a href="proses_hapus_kontak.php?KontakID=<?php echo $data["KontakID"] ?>" onclick="return confirm('Yakin mau hapus data?')" class="btn btn-danger btn-sm">Delete</a>
                                                         </td>
                                                     </tr>
                                                 <?php } ?>
                                             <?php } ?>
                                         </tbody>
                                     </table>
-
                                 </div> <!-- end card body-->
                             </div> <!-- end card -->
                         </div><!-- end col-->
                     </div> <!-- end row-->
-                </div> <!-- content -->
+                </div> <!-- end content -->
 
                 <!-- Footer Start -->
                 <?php include "template/footer.php" ?>
@@ -117,7 +121,6 @@
             </div>
         </div>
     </div>
-
 </body>
 
 <!-- Vendor js -->
@@ -144,11 +147,9 @@
 <!-- App js -->
 <script src="assets/js/app.min.js"></script>
 
-
-
 </html>
 <script>
-    function konfirmasiHapus(KategoriID) {
+    function konfirmasiHapus(CastID) {
 
         swal({
                 title: "Apakah Kamu yakin?",
@@ -166,7 +167,7 @@
                         icon: "success",
                     });
                     setTimeout(function() {
-                        window.location.href = "proses_hapus_kategori.php?KategoriID=" + KategoriID;
+                        window.location.href = "proses_hapus_cast.php?CastID=" + CastID;
                     }, 2000);
                 } else {
                     swal("Data Batal Di hapus!", {
